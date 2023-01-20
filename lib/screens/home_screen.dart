@@ -10,6 +10,10 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        color: Color(0xFFFFFF),
+      ),
+    );
   }
 }
