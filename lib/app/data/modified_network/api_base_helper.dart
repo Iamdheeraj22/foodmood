@@ -208,8 +208,8 @@ class ApiBaseHelper {
               positiveText: AppStrings.txtOk,
               onPositiveClick: () {
                 //AppServices.getInstance().outFromApp();
-                SharedPreferenceHelper.getInstance()
-                    .logout(NavigationService.navigatorKey.currentContext);
+                // SharedPreferenceHelper.getInstance()
+                //     .logout(NavigationService.navigatorKey.currentContext);
               });
         }
         return ApiResponse.success(formattedResponse);
@@ -223,8 +223,8 @@ class ApiBaseHelper {
             positiveText: AppStrings.txtOk,
             onPositiveClick: () {
               //AppServices.getInstance().outFromApp();
-              SharedPreferenceHelper.getInstance()
-                  .logout(NavigationService.navigatorKey.currentContext);
+              // SharedPreferenceHelper.getInstance()
+              //     .logout(NavigationService.navigatorKey.currentContext);
             });
         return ApiResponse.error(ApiMsgStrings.txtUnauthorised);
       } on FetchDataException {

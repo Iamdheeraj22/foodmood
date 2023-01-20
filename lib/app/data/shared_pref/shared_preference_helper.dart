@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:foodmood/app/data/shared_pref/preferences.dart';
-import 'package:foodmood/app/screens/auth/login/login_screen.dart';
 import 'package:foodmood/app/services/navigator_service.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -256,13 +255,5 @@ class SharedPreferenceHelper {
       prefs.clear();
     });
     return true;
-  }
-
-  logout(BuildContext? context) async {
-    await clearPreference();
-    await Navigator.pushNamedAndRemoveUntil(
-        context ?? NavigationService.navigatorKey.currentContext!,
-        SplashScreen.id,
-        (route) => false);
   }
 }
