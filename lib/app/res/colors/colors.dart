@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/colors/hex_color.dart';
 
-
-class AppColors {
+class ColorsCollections {
   static MaterialColor materialColorPrimarySwatch =
       createMaterialColor(colorPrimary);
 
@@ -32,10 +31,17 @@ class AppColors {
   static Color cremeColor = ColorFromHex('#E9E9E9');
   static Color lightBlue = ColorFromHex('#17223E');
   static Color lightBorder = ColorFromHex('#DFDFDF');
+
+  //new colors
+  static const Color appPrimaryColor = Color(0xFFFF9D01);
+  static const Color appOnbordingColor = Color(0xFF161616);
 }
 
 extension ColorExtenstion on BuildContext {
   Color get primaryColor => Theme.of(this).brightness == Brightness.light
-      ? AppColors.colorPrimary
-      : AppColors.colorPrimaryDark;
+      ? ColorsCollections.colorPrimary
+      : ColorsCollections.colorPrimaryDark;
+  Color get appPrimaryColor => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appPrimaryColor
+      : ColorsCollections.appPrimaryColor;
 }

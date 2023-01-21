@@ -100,7 +100,7 @@ class PermissionUtil {
                         if (shouldShowNegative)
                           TextButton(
                               style: TextButton.styleFrom(
-                                foregroundColor: AppColors.colorPrimary,
+                                foregroundColor: ColorsCollections.colorPrimary,
                                 minimumSize: Size(85.w, 36.h),
                                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                               ),
@@ -112,7 +112,7 @@ class PermissionUtil {
                                   style: const TextStyle(color: Colors.black))),
                         TextButton(
                             style: TextButton.styleFrom(
-                              foregroundColor: AppColors.colorPrimary,
+                              foregroundColor: ColorsCollections.colorPrimary,
                               minimumSize: Size(85.w, 36.h),
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
                             ),

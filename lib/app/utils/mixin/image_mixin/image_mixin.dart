@@ -27,14 +27,14 @@ mixin ImageMixin {
             text: Strings.txtSelectPhoto,
             textAlign: TextAlign.center,
             textSize: 18.sp,
-            color: AppColors.colorPrimary,
+            color: ColorsCollections.colorPrimary,
             fontWeight: FontStyles.bold,
           ),
           message: TextWidget(
             text: Strings.txtPleaseSelectImage,
             textSize: 14.sp,
             textAlign: TextAlign.center,
-            color: AppColors.colorPrimary,
+            color: ColorsCollections.colorPrimary,
             fontWeight: FontStyles.regular,
           ),
           actions: <Widget>[
@@ -43,7 +43,7 @@ mixin ImageMixin {
                 text: Strings.txtCamera,
                 textSize: 18.sp,
                 textAlign: TextAlign.center,
-                color: AppColors.colorPrimary,
+                color: ColorsCollections.colorPrimary,
                 fontWeight: FontStyles.regular,
               ),
               onPressed: () async {
@@ -65,7 +65,7 @@ mixin ImageMixin {
                 text: Strings.txtGallery,
                 textSize: 18.sp,
                 textAlign: TextAlign.center,
-                color: AppColors.colorPrimary,
+                color: ColorsCollections.colorPrimary,
                 fontWeight: FontStyles.regular,
               ),
               onPressed: () async {
@@ -92,7 +92,7 @@ mixin ImageMixin {
               text: Strings.txtCancel,
               textSize: 18.sp,
               textAlign: TextAlign.center,
-              color: AppColors.colorPrimary,
+              color: ColorsCollections.colorPrimary,
               fontWeight: FontStyles.medium,
             ),
             onPressed: () {

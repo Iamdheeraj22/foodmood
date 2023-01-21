@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
-
 class CustomButton extends StatefulWidget {
   const CustomButton(
       {Key? key,
       required this.label,
       required this.onPressed,
       this.isLoading = false,
+      this.width = 100,
+      this.height = double.infinity,
       this.color})
       : super(key: key);
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
   final Color? color;
+  final double? height;
+  final double? width;
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -25,15 +28,18 @@ class _CustomButtonState extends State<CustomButton> {
     return ElevatedButton(
         onPressed: widget.isLoading ? () {} : widget.onPressed,
         style: ElevatedButton.styleFrom(
-            primary: widget.color,
-            minimumSize: Size(double.infinity, 50.h),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.r))),
-        child: widget.isLoading
-            ? const CircularProgressIndicator()
-            : Text(
-                widget.label,
-                style: TextStyle(color: Colors.white, fontSize: 16.sp),
-              ));
+          backgroundColor: widget.color,
+          minimumSize:
+              Size(widget.width ?? double.infinity, widget.height ?? 50.h),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.h),
+          child: widget.isLoading
+              ? const CircularProgressIndicator()
+              : Text(
+                  widget.label,
+                  style: TextStyle(color: Colors.white, fontSize: 16.sp),
+                ),
+        ));
   }
 }

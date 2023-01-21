@@ -5,6 +5,7 @@ class Strings {
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
+  static const String skip = 'Skip';
   static const String name = 'Name';
   static const String enterName = 'Enter name';
   static const String enterLocation = 'Enter location';
