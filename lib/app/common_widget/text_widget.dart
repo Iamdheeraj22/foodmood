@@ -47,7 +47,7 @@ class TextWidget extends StatelessWidget {
           color: color,
           fontWeight: fontWeight,
           height: lineSpace ?? 1.4,
-          fontFamily: fontFamily,
+          fontFamily: 'Poppins',
         ),
         textAlign: textAlign,
       ),

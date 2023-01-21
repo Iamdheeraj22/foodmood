@@ -6,6 +6,7 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/app/services/navigator_service.dart';
 import 'package:foodmood/app/utils/debug_utils/debug_utils.dart';
 import 'package:foodmood/app/utils/mixin/permission/permission_util.dart';
 

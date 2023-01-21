@@ -4,14 +4,14 @@ import 'dart:ui';
 class FontFamily {
   FontFamily._();
 
-  static const String inter = 'INTER';
-  static const String roboto = 'Roboto';
+  static const String inter = 'Poppins';
+  //static const String roboto = 'Roboto';
 }
 
 //for font fontStyles
 class FontStyles {
   FontStyles._();
-  static const String inter = 'INTER';
+  static const String inter = 'Poppins';
 
   /// w100
   static FontWeight thin = FontWeight.w100;
