@@ -1,9 +1,9 @@
 //This class is used for app strings.xml
-class AppStrings {
-  AppStrings._();
+class Strings {
+  Strings._();
 
   /*-------------------General Strings-------------------*/
-
+  static const String appName = 'Food Mood';
   static const String submit = 'Submit';
   static const String name = 'Name';
   static const String enterName = 'Enter name';

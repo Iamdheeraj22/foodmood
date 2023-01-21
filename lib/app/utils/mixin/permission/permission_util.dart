@@ -69,7 +69,7 @@ class PermissionUtil {
                                 () {
                                   Navigator.pop(context);
                                 },
-                            child: Text(negativeText ?? AppStrings.txtCancel),
+                            child: Text(negativeText ?? Strings.txtCancel),
                           ),
                         CupertinoDialogAction(
                           onPressed: onPositiveClick ??
@@ -77,7 +77,7 @@ class PermissionUtil {
                                 Navigator.pop(context);
                                 openAppSettings();
                               },
-                          child: Text(positiveText ?? AppStrings.txtSettings),
+                          child: Text(positiveText ?? Strings.txtSettings),
                         ),
                       ],
                     )
@@ -108,7 +108,7 @@ class PermissionUtil {
                                   () {
                                     Navigator.of(context).pop();
                                   },
-                              child: Text(negativeText ?? AppStrings.txtCancel,
+                              child: Text(negativeText ?? Strings.txtCancel,
                                   style: const TextStyle(color: Colors.black))),
                         TextButton(
                             style: TextButton.styleFrom(
@@ -121,8 +121,7 @@ class PermissionUtil {
                                   Navigator.of(context).pop();
                                   openAppSettings();
                                 },
-                            child: Text(
-                                positiveText ?? AppStrings.txtOpenSettings,
+                            child: Text(positiveText ?? Strings.txtOpenSettings,
                                 style: const TextStyle(color: Colors.black))),
                       ],
                     ));

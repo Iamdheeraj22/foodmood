@@ -24,14 +24,14 @@ mixin ImageMixin {
       builder: (BuildContext context) {
         return CupertinoActionSheet(
           title: TextWidget(
-            text: AppStrings.txtSelectPhoto,
+            text: Strings.txtSelectPhoto,
             textAlign: TextAlign.center,
             textSize: 18.sp,
             color: AppColors.colorPrimary,
             fontWeight: FontStyles.bold,
           ),
           message: TextWidget(
-            text: AppStrings.txtPleaseSelectImage,
+            text: Strings.txtPleaseSelectImage,
             textSize: 14.sp,
             textAlign: TextAlign.center,
             color: AppColors.colorPrimary,
@@ -40,7 +40,7 @@ mixin ImageMixin {
           actions: <Widget>[
             CupertinoActionSheetAction(
               child: TextWidget(
-                text: AppStrings.txtCamera,
+                text: Strings.txtCamera,
                 textSize: 18.sp,
                 textAlign: TextAlign.center,
                 color: AppColors.colorPrimary,
@@ -62,7 +62,7 @@ mixin ImageMixin {
             ),
             CupertinoActionSheetAction(
               child: TextWidget(
-                text: AppStrings.txtGallery,
+                text: Strings.txtGallery,
                 textSize: 18.sp,
                 textAlign: TextAlign.center,
                 color: AppColors.colorPrimary,
@@ -89,7 +89,7 @@ mixin ImageMixin {
           cancelButton: CupertinoActionSheetAction(
             isDefaultAction: true,
             child: TextWidget(
-              text: AppStrings.txtCancel,
+              text: Strings.txtCancel,
               textSize: 18.sp,
               textAlign: TextAlign.center,
               color: AppColors.colorPrimary,
@@ -146,13 +146,13 @@ mixin ImageMixin {
         PermissionUtil.showActionDialog(
             context: NavigationService.navigatorKey.currentContext!,
             description: permissionType == Permission.camera
-                ? AppStrings.txtCameraPermission
-                : AppStrings.txtGalleryPermission,
+                ? Strings.txtCameraPermission
+                : Strings.txtGalleryPermission,
             title: permissionType == Permission.camera
-                ? AppStrings.txtThisAppNeedsCameraAccess
+                ? Strings.txtThisAppNeedsCameraAccess
                 : Platform.isIOS
-                    ? AppStrings.txtThisAppNeedsGalleryAccess
-                    : AppStrings.txtThisAppNeedsStorageAccess);
+                    ? Strings.txtThisAppNeedsGalleryAccess
+                    : Strings.txtThisAppNeedsStorageAccess);
       });
     }
     return null;
@@ -170,7 +170,6 @@ mixin ImageMixin {
       Navigator.pop(context, image);
     }
   } */
-
 }
 
 enum ImageType { camera, gallery }

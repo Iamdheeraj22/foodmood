@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodmood/app/data/network/api_msg_strings.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 
-
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget(
       {Key? key, this.message, this.retryCallback, this.retryMessage})
@@ -21,7 +20,7 @@ class CustomErrorWidget extends StatelessWidget {
           if (retryCallback != null)
             OutlinedButton(
                 onPressed: retryCallback,
-                child: Text(retryMessage ?? AppStrings.retry))
+                child: Text(retryMessage ?? Strings.retry))
         ],
       ),
     );
