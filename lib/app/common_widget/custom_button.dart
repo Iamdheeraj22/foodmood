@@ -25,21 +25,24 @@ class CustomButton extends StatefulWidget {
 class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: widget.isLoading ? () {} : widget.onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: widget.color,
-          minimumSize:
-              Size(widget.width ?? double.infinity, widget.height ?? 50.h),
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h),
+    return InkWell(
+      onTap: widget.onPressed,
+      child: Container(
+          decoration: BoxDecoration(color: widget.color),
+          height: widget.height ?? 50.h,
+          margin: EdgeInsets.symmetric(horizontal: 20.w),
           child: widget.isLoading
               ? const CircularProgressIndicator()
-              : Text(
-                  widget.label,
-                  style: TextStyle(color: Colors.white, fontSize: 16.sp),
-                ),
-        ));
+              : Center(
+                  child: Text(
+                    widget.label,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                )),
+    );
   }
 }

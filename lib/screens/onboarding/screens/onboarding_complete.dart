@@ -21,7 +21,7 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Spacer(),
             Image.asset(
@@ -33,6 +33,8 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
               height: 20.h,
             ),
             TextWidget(
+              textAlign: TextAlign.center,
+              fontWeight: FontWeight.w800,
               text: Strings.onboardingTitle4,
               textSize: 24.sp,
               color: ColorsCollections.appPrimaryColor,

@@ -104,8 +104,8 @@ class Strings {
   //Sprint 1 Strings
   static const String onboardingTitle1 = 'All your favourites restaurants';
   static const String onboardingTitle2 = 'Unmatched reliability';
-  static const String onboardingTitle3 = '24/7 support for you';
-  static const String onboardingTitle4 = 'Eat it in your own cozy comfort';
+  static const String onboardingTitle3 = '24/7 support\nfor you';
+  static const String onboardingTitle4 = 'Eat it in your\nown cozy comfort';
 
   static const String onboardingDesc1 =
       'Order from the best local restaurants with ease and on-demand delivery';
@@ -114,7 +114,7 @@ class Strings {
   static const String onboardingDesc3 =
       'Something came up? Talk to a real person. We are here to help';
   static const String onboardingDesc4 =
-      'Want a food of your mood? Get your tummies filled with the edible good';
+      'Want a food of your mood?\nGet your tummies filled with the\nedible good';
 
   static const String getMoody = 'Get Moody';
 }
