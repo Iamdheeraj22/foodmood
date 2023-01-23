@@ -44,6 +44,7 @@ class Strings {
   static const String logout = 'Logout';
   static const String yes = 'Yes';
   static const String no = 'No';
+  static const String alreadyAccount = 'Already have an account?';
 
   static const String description = 'Description';
   static const String enterDescription = 'Enter description';

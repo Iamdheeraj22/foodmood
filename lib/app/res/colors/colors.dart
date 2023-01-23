@@ -34,7 +34,7 @@ class ColorsCollections {
 
   static Color black = Colors.black;
   static Color white = Colors.white;
- 
+
   //new colors
   static const Color appPrimaryColor = Color(0xFFFF9D01);
   static const Color appOnbordingColor = Color(0xFF161616);

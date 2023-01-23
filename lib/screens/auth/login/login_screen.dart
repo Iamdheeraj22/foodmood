@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/custom_button.dart';
 import 'package:foodmood/app/common_widget/custom_edittext_text_widget.dart';
@@ -118,17 +119,15 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 30.h,
               ),
-              Container(
-                  margin: const EdgeInsets.only(bottom: 30),
-                  child: CustomButton(
-                      height: 60.h,
-                      color: ColorsCollections.appPrimaryColor,
-                      label: Strings.signIn,
-                      fontWeight: FontStyles.bold,
-                      fontSize: 16.sp,
-                      onPressed: () {})),
+              CustomButton(
+                  height: 60.h,
+                  color: ColorsCollections.appPrimaryColor,
+                  label: Strings.signIn,
+                  fontWeight: FontStyles.bold,
+                  fontSize: 16.sp,
+                  onPressed: () {}),
               SizedBox(
-                height: 30.h,
+                height: 60.h,
               ),
               Row(
                 children: [
@@ -182,9 +181,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: Strings.dontHaveAnAccount,
                       style: TextStyle(color: context.black, fontSize: 14.sp)),
                   TextSpan(
-                      text: Strings.signUp,
-                      style: TextStyle(
-                          color: context.appPrimaryColor, fontSize: 14.sp))
+                    text: Strings.signUp,
+                    style: TextStyle(
+                        color: context.appPrimaryColor,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700),
+                    recognizer: TapGestureRecognizer()..onTap = () {},
+                  )
                 ])),
               ),
             ],

@@ -10,18 +10,18 @@ class CircleIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: callback,
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            border: Border.all(
-              color: context.black,
-            )),
-        height: 100.h,
-        width: 82.w,
-        child: Center(child: Image.asset(icon)),
-      ),
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100.r),
+          border: Border.all(
+            color: context.black,
+          )),
+      height: 100.h,
+      width: 82.w,
+      child: InkWell(
+          borderRadius: BorderRadius.circular(100.r),
+          onTap: callback,
+          child: Center(child: Image.asset(icon))),
     );
   }
 }
