@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/auth/login/login_screen.dart';
 
 class OnBoardingCompleteScreen extends StatefulWidget {
   OnBoardingCompleteScreen({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Spacer(),
+            const Spacer(),
             Image.asset(
               Images.pasta,
               height: 255.h,
@@ -51,14 +52,19 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
                 color: ColorsCollections.appOnbordingColor,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
                 margin: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 30),
                 child: CustomButton(
                     height: 50.h,
                     color: ColorsCollections.appPrimaryColor,
                     label: Strings.getMoody,
-                    onPressed: () {}))
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                    }))
           ],
         ),
       ),

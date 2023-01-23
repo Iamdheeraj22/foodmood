@@ -35,6 +35,8 @@ class ColorsCollections {
   //new colors
   static const Color appPrimaryColor = Color(0xFFFF9D01);
   static const Color appOnbordingColor = Color(0xFF161616);
+  static const Color appGreyColor1 = Color(0xFFDADADA);
+  static const Color appGreyColor2 = Color(0xFFD9D9D9);
 }
 
 extension ColorExtenstion on BuildContext {
@@ -44,4 +46,10 @@ extension ColorExtenstion on BuildContext {
   Color get appPrimaryColor => Theme.of(this).brightness == Brightness.light
       ? ColorsCollections.appPrimaryColor
       : ColorsCollections.appPrimaryColor;
+  Color get appGreyColor1 => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appGreyColor1
+      : ColorsCollections.appGreyColor1;
+  Color get appGreyColor2 => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appGreyColor2
+      : ColorsCollections.appGreyColor2;
 }

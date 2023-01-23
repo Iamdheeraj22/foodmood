@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(
-              context: context, draftWidth: 375, draftHeight: 812);
+              context: context, draftWidth: 428, draftHeight: 926);
           return child!;
         });
   }

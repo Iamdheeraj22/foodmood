@@ -9,5 +9,6 @@ class Images {
   static const String chef = '${imagePath}chef.png';
   static const String coffeeShop = '${imagePath}coffee_shop.png';
   static const String pasta = '${imagePath}pasta.png';
+  static const String logo = '${imagePath}logo.png';
   static const String takeaway = '${imagePath}take_away.png';
 }

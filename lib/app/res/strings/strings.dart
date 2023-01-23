@@ -59,6 +59,7 @@ class Strings {
   static const String password = 'Password';
   static const String username = 'Username';
   static const String phoneNumber = 'Phone Number';
+  static const String signIn = 'SignIn';
   static const String signUp = 'SignUp';
   static const String enterUsername = 'Enter Username';
   static const String enterPhoneNumber = 'Enter phone number';
