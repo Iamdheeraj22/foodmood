@@ -67,6 +67,9 @@ class Strings {
   static const String enterEmailHint = 'Enter email';
   static const String enterPasswordHint = 'Enter password';
   static const String forgotPassword = 'Forgot your password?';
+  static const String forgotPassword2 = 'Forgot password?';
+  static const String forgotPasswordDesc =
+      'Don’t worry! It happens. Please enter the address\nassociated with your account.';
   static const String forgotPasswordTitle = 'Forgot password';
   static const String oldPassword = 'Old password';
   static const String newPassword = 'New password';
