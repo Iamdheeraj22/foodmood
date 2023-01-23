@@ -13,7 +13,7 @@ import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
   static const String id = "/login_screen";
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -29,12 +29,15 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 50.h),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20.h,
+              ),
               TextWidget(
                 text: Strings.signIn,
                 textSize: 24.sp,
@@ -55,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _emailController,
                 hintText: 'Enter email address',
                 title: 'Email address',
-                prefixIcon: Icon(Icons.email),
+                prefixIcon: const Icon(Icons.email),
                 inputType: TextInputType.text,
                 inputAction: TextInputAction.next,
               ),
@@ -67,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: 'Enter password',
                 title: 'Password',
                 inputType: TextInputType.visiblePassword,
-                prefixIcon: Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock),
                 inputAction: TextInputAction.done,
                 isShow: isShow,
               ),
@@ -116,19 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 30.h,
               ),
               Container(
-                  margin: EdgeInsets.only(bottom: 30),
+                  margin: const EdgeInsets.only(bottom: 30),
                   child: CustomButton(
                       height: 60.h,
                       color: ColorsCollections.appPrimaryColor,
                       label: Strings.signIn,
                       fontWeight: FontStyles.bold,
                       fontSize: 16.sp,
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
-                      })),
+                      onPressed: () {})),
               SizedBox(
                 height: 30.h,
               ),
@@ -177,16 +175,18 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 50.h,
               ),
-              RichText(
-                  text: TextSpan(children: [
-                TextSpan(
-                    text: Strings.dontHaveAnAccount,
-                    style: TextStyle(color: context.black, fontSize: 14.sp)),
-                TextSpan(
-                    text: Strings.signUp,
-                    style: TextStyle(
-                        color: context.appPrimaryColor, fontSize: 14.sp))
-              ]))
+              Center(
+                child: RichText(
+                    text: TextSpan(children: [
+                  TextSpan(
+                      text: Strings.dontHaveAnAccount,
+                      style: TextStyle(color: context.black, fontSize: 14.sp)),
+                  TextSpan(
+                      text: Strings.signUp,
+                      style: TextStyle(
+                          color: context.appPrimaryColor, fontSize: 14.sp))
+                ])),
+              ),
             ],
           ),
         ),
