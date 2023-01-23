@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/colors/hex_color.dart';
 
-
-class AppColors {
+class ColorsCollections {
   static MaterialColor materialColorPrimarySwatch =
       createMaterialColor(colorPrimary);
 
@@ -32,10 +31,34 @@ class AppColors {
   static Color cremeColor = ColorFromHex('#E9E9E9');
   static Color lightBlue = ColorFromHex('#17223E');
   static Color lightBorder = ColorFromHex('#DFDFDF');
+
+  static Color black = Colors.black;
+  static Color white = Colors.white;
+
+  //new colors
+  static const Color appPrimaryColor = Color(0xFFFF9D01);
+  static const Color appOnbordingColor = Color(0xFF161616);
+  static const Color appGreyColor1 = Color(0xFFDADADA);
+  static const Color appGreyColor2 = Color(0xFFD9D9D9);
 }
 
 extension ColorExtenstion on BuildContext {
   Color get primaryColor => Theme.of(this).brightness == Brightness.light
-      ? AppColors.colorPrimary
-      : AppColors.colorPrimaryDark;
+      ? ColorsCollections.colorPrimary
+      : ColorsCollections.colorPrimaryDark;
+  Color get appPrimaryColor => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appPrimaryColor
+      : ColorsCollections.appPrimaryColor;
+  Color get appGreyColor1 => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appGreyColor1
+      : ColorsCollections.appGreyColor1;
+  Color get appGreyColor2 => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appGreyColor2
+      : ColorsCollections.appGreyColor2;
+  Color get white => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.white
+      : ColorsCollections.white;
+  Color get black => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.black
+      : ColorsCollections.black;
 }

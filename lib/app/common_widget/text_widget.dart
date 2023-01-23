@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 
-
 class TextWidget extends StatelessWidget {
   const TextWidget(
       {Key? key,
@@ -12,7 +11,7 @@ class TextWidget extends StatelessWidget {
       this.fontWeight = FontWeight.normal,
       this.backgroundColor = Colors.transparent,
       this.textAlign = TextAlign.start,
-      this.fontFamily = FontStyles.inter,
+      this.fontFamily = FontStyles.gilmerHeavy,
       this.textDecoration = TextDecoration.none,
       this.maxLines,
       this.overflow,
@@ -46,8 +45,8 @@ class TextWidget extends StatelessWidget {
           fontSize: textSize,
           color: color,
           fontWeight: fontWeight,
-          height: lineSpace ?? 1.4,
-          fontFamily: fontFamily,
+          height: lineSpace ?? 1.2,
+          fontFamily: FontStyles.gilmerHeavy,
         ),
         textAlign: textAlign,
       ),

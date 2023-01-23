@@ -10,8 +10,8 @@ class AppTheme with ChangeNotifier {
   static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
       //fontFamily: FontFamily.appFontFamily,
-      primarySwatch: AppColors.materialColorPrimarySwatch,
-      primaryColor: AppColors.colorPrimary,
+      primarySwatch: ColorsCollections.materialColorPrimarySwatch,
+      primaryColor: ColorsCollections.colorPrimary,
       disabledColor: Colors.grey,
       // colorScheme: ColorScheme.light(secondary: AppColors.appGreen,primary: AppColors.appGreen), // ColorScheme to change circular progress and scroll ripple
       // cardColor: AppColors.cardColorLight,
@@ -32,7 +32,7 @@ class AppTheme with ChangeNotifier {
       dividerColor: Colors.grey.withOpacity(0.7),
       snackBarTheme: SnackBarThemeData(
           behavior: SnackBarBehavior.floating,
-          backgroundColor: AppColors.colorPrimary,
+          backgroundColor: ColorsCollections.colorPrimary,
           // elevation: ,
           contentTextStyle: const TextStyle(color: Colors.white)),
       floatingActionButtonTheme: Theme.of(context)
@@ -40,11 +40,11 @@ class AppTheme with ChangeNotifier {
           .copyWith(
               backgroundColor: Theme.of(context).primaryColor,
               foregroundColor: Colors.black,
-              splashColor: AppColors.colorPrimary.withOpacity(0.7)),
+              splashColor: ColorsCollections.colorPrimary.withOpacity(0.7)),
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
           colorScheme: const ColorScheme.light(),
-          buttonColor: AppColors.colorPrimary,
-          splashColor: AppColors.colorPrimary.withOpacity(0.7)),
+          buttonColor: ColorsCollections.colorPrimary,
+          splashColor: ColorsCollections.colorPrimary.withOpacity(0.7)),
 /*      tabBarTheme: TabBarTheme(
           //  unselectedLabelColor: Colors.black,
           labelColor: AppColors.colorPrimary),*/
@@ -61,7 +61,7 @@ class AppTheme with ChangeNotifier {
   static ThemeData darkTheme(BuildContext context) {
     return ThemeData(
       //fontFamily: FontFamily.appFontFamily,
-      primarySwatch: AppColors.materialColorPrimarySwatch,
+      primarySwatch: ColorsCollections.materialColorPrimarySwatch,
       // primaryColor: AppColors.colorPrimary,
       disabledColor: Colors.grey,
       //cardColor: AppColors.cardColorDark,
@@ -80,7 +80,7 @@ class AppTheme with ChangeNotifier {
       //scaffoldBackgroundColor: AppColors.colorPrimary,
       snackBarTheme: SnackBarThemeData(
           behavior: SnackBarBehavior.floating,
-          backgroundColor: AppColors.colorPrimary,
+          backgroundColor: ColorsCollections.colorPrimary,
           //elevation: SizeConfig.standardElevation,
           contentTextStyle: const TextStyle(color: Colors.white)),
       floatingActionButtonTheme: Theme.of(context)
@@ -88,11 +88,11 @@ class AppTheme with ChangeNotifier {
           .copyWith(
               backgroundColor: Theme.of(context).primaryColorDark,
               foregroundColor: Colors.white,
-              splashColor: AppColors.colorPrimary.withOpacity(0.7)),
+              splashColor: ColorsCollections.colorPrimary.withOpacity(0.7)),
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
           colorScheme: const ColorScheme.light(),
-          buttonColor: AppColors.colorPrimary,
-          splashColor: AppColors.colorPrimary.withOpacity(0.7)),
+          buttonColor: ColorsCollections.colorPrimary,
+          splashColor: ColorsCollections.colorPrimary.withOpacity(0.7)),
       // progressIndicatorTheme:
       // ProgressIndicatorThemeData(color: AppColors.blueDeFrance),
       bottomNavigationBarTheme: Theme.of(context)
@@ -100,7 +100,7 @@ class AppTheme with ChangeNotifier {
           .copyWith(
             backgroundColor: CupertinoColors.tertiarySystemGroupedBackground,
             // elevation: SizeConfig.smallerFontSize,
-            selectedItemColor: AppColors.materialColorPrimarySwatch,
+            selectedItemColor: ColorsCollections.materialColorPrimarySwatch,
             // selectedLabelStyle:
             // TextStyle(fontSize: SizeConfig.standardFontSize),
             // unselectedLabelStyle:

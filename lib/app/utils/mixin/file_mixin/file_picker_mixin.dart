@@ -8,7 +8,6 @@ import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/utils/mixin/permission/permission_util.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-
 extension FileExtension on String {
   String? get getExtension => split('.').last;
   String? get getName => split('/').last;
@@ -113,10 +112,10 @@ mixin FilePickerMixin {
     } else {
       PermissionUtil.showActionDialog(
           context: context,
-          description: AppStrings.txtStoragePermission,
+          description: Strings.txtStoragePermission,
           title: Platform.isIOS
-              ? AppStrings.txtThisAppNeedsGalleryAccess
-              : AppStrings.txtThisAppNeedsStorageAccess);
+              ? Strings.txtThisAppNeedsGalleryAccess
+              : Strings.txtThisAppNeedsStorageAccess);
     }
     return null;
   }

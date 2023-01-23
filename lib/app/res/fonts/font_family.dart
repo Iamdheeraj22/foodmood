@@ -4,14 +4,14 @@ import 'dart:ui';
 class FontFamily {
   FontFamily._();
 
-  static const String inter = 'INTER';
-  static const String roboto = 'Roboto';
+  static const String gilmerHeavy = 'Gilmer Heavy';
+  //static const String roboto = 'Roboto';
 }
 
 //for font fontStyles
 class FontStyles {
   FontStyles._();
-  static const String inter = 'INTER';
+  static const String gilmerHeavy = 'Gilmer Heavy';
 
   /// w100
   static FontWeight thin = FontWeight.w100;

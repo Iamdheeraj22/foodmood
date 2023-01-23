@@ -17,7 +17,6 @@ import 'package:foodmood/app/utils/debug_utils/debug_utils.dart';
 import 'package:foodmood/app/utils/mixin/permission/permission_util.dart';
 import 'package:http/http.dart' as http;
 
-
 class ApiBaseHelper {
   ApiBaseHelper._internal();
 
@@ -205,7 +204,7 @@ class ApiBaseHelper {
               context: NavigationService.navigatorKey.currentContext,
               description: formattedResponse['failureMsg'].toString(),
               shouldShowNegative: false,
-              positiveText: AppStrings.txtOk,
+              positiveText: Strings.txtOk,
               onPositiveClick: () {
                 //AppServices.getInstance().outFromApp();
                 // SharedPreferenceHelper.getInstance()
@@ -218,9 +217,9 @@ class ApiBaseHelper {
       } on UnauthorisedException {
         PermissionUtil.showActionDialog(
             context: NavigationService.navigatorKey.currentContext,
-            description: AppStrings.sessionExpire,
+            description: Strings.sessionExpire,
             shouldShowNegative: false,
-            positiveText: AppStrings.txtOk,
+            positiveText: Strings.txtOk,
             onPositiveClick: () {
               //AppServices.getInstance().outFromApp();
               // SharedPreferenceHelper.getInstance()

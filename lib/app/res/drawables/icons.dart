@@ -6,5 +6,7 @@ class AppIcons {
   static const String iconPath = 'assets/icons/';
 
   /*---------------------Icons---------------------*/
-  static const String appLogo = '${iconPath}app_logo.png';
+  static const String google = '${iconPath}google.png';
+  static const String facebook = '${iconPath}facebook.png';
+  static const String apple = '${iconPath}apple.png';
 }
