@@ -12,7 +12,7 @@ class CustomPasswordEditextText extends StatefulWidget {
       this.suffixIcon,
       required this.controller,
       required this.title,
-      this.isShow,
+      required this.isShow,
       required this.inputAction,
       required this.inputType})
       : super(key: key);
@@ -22,7 +22,7 @@ class CustomPasswordEditextText extends StatefulWidget {
   final TextEditingController controller;
   final String title;
   final TextInputAction inputAction;
-  final bool? isShow;
+  final bool isShow;
   final TextInputType inputType;
   @override
   State<CustomPasswordEditextText> createState() =>
@@ -46,7 +46,7 @@ class _CustomPasswordEditextTextState extends State<CustomPasswordEditextText> {
         Container(
           decoration: BoxDecoration(color: context.appGreyColor2),
           child: TextFormField(
-              obscureText: widget.isShow ?? false,
+              obscureText: !widget.isShow,
               controller: widget.controller,
               textAlignVertical: TextAlignVertical.center,
               keyboardType: widget.inputType,

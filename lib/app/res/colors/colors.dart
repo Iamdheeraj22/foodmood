@@ -32,6 +32,9 @@ class ColorsCollections {
   static Color lightBlue = ColorFromHex('#17223E');
   static Color lightBorder = ColorFromHex('#DFDFDF');
 
+  static Color black = Colors.black;
+  static Color white = Colors.white;
+ 
   //new colors
   static const Color appPrimaryColor = Color(0xFFFF9D01);
   static const Color appOnbordingColor = Color(0xFF161616);
@@ -52,4 +55,10 @@ extension ColorExtenstion on BuildContext {
   Color get appGreyColor2 => Theme.of(this).brightness == Brightness.light
       ? ColorsCollections.appGreyColor2
       : ColorsCollections.appGreyColor2;
+  Color get white => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.white
+      : ColorsCollections.white;
+  Color get black => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.black
+      : ColorsCollections.black;
 }

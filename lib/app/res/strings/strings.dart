@@ -59,13 +59,13 @@ class Strings {
   static const String password = 'Password';
   static const String username = 'Username';
   static const String phoneNumber = 'Phone Number';
-  static const String signIn = 'SignIn';
+  static const String signIn = 'Sign in';
   static const String signUp = 'SignUp';
   static const String enterUsername = 'Enter Username';
   static const String enterPhoneNumber = 'Enter phone number';
   static const String enterEmailHint = 'Enter email';
   static const String enterPasswordHint = 'Enter password';
-  static const String forgotPassword = 'Forgot password?';
+  static const String forgotPassword = 'Forgot your password?';
   static const String forgotPasswordTitle = 'Forgot password';
   static const String oldPassword = 'Old password';
   static const String newPassword = 'New password';

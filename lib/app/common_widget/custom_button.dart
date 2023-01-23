@@ -9,14 +9,17 @@ class CustomButton extends StatefulWidget {
       this.isLoading = false,
       this.width = 100,
       this.height = double.infinity,
-      this.color})
+      this.color,
+      this.fontSize, this.fontWeight})
       : super(key: key);
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
   final Color? color;
+  final FontWeight? fontWeight;
   final double? height;
   final double? width;
+  final double? fontSize;
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -30,7 +33,6 @@ class _CustomButtonState extends State<CustomButton> {
       child: Container(
           decoration: BoxDecoration(color: widget.color),
           height: widget.height ?? 50.h,
-          margin: EdgeInsets.symmetric(horizontal: 20.w),
           child: widget.isLoading
               ? const CircularProgressIndicator()
               : Center(
@@ -38,7 +40,8 @@ class _CustomButtonState extends State<CustomButton> {
                     widget.label,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16.sp,
+                      fontWeight: widget.fontWeight,
+                      fontSize: widget.fontSize?.sp,
                     ),
                     textAlign: TextAlign.center,
                   ),
