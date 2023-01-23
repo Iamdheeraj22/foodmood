@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter your name',
                   inputType: TextInputType.text,
                   title: 'Full Name',
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
                 SizedBox(
                   height: 20.h,
@@ -79,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter email address',
                   inputType: TextInputType.text,
                   title: 'Email address',
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: const Icon(Icons.email),
                 ),
                 SizedBox(
                   height: 20.h,
@@ -90,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter your name',
                   inputType: TextInputType.text,
                   title: 'Full Name',
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
                 SizedBox(
                   height: 20.h,
@@ -100,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _createPasswordController,
                     title: 'Create password',
                     isShow: isShow,
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: const Icon(Icons.lock),
                     inputAction: TextInputAction.next,
                     inputType: TextInputType.text),
                 SizedBox(
@@ -111,8 +111,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _createPasswordController,
                     title: 'Confirm password',
                     isShow: isShow,
-                    prefixIcon: Icon(Icons.lock),
-                    inputAction: TextInputAction.next,
+                    prefixIcon: const Icon(Icons.lock),
+                    inputAction: TextInputAction.done,
                     inputType: TextInputType.text),
                 SizedBox(
                   height: 40.h,
