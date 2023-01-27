@@ -5,7 +5,12 @@ class Strings {
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
+  static const String verify = 'Verify';
+  static const String success = 'Success';
   static const String skip = 'Skip';
+  static const String resetPassword = 'Reset Password';
+  static const String resetPasswordDesc =
+      'Atleast 9 characters with uppercase and\nlowercase letters.';
   static const String name = 'Name';
   static const String enterName = 'Enter name';
   static const String enterLocation = 'Enter location';
@@ -45,6 +50,10 @@ class Strings {
   static const String yes = 'Yes';
   static const String no = 'No';
   static const String alreadyAccount = 'Already have an account?';
+  static const String successDesc1 =
+      'Your password has been reset successfully.';
+  static const String successDesc2 = 'Don’t forget the password again :)';
+  static const String goMoody = 'Go Moody Again';
 
   static const String description = 'Description';
   static const String enterDescription = 'Enter description';
@@ -62,11 +71,17 @@ class Strings {
   static const String phoneNumber = 'Phone Number';
   static const String signIn = 'Sign in';
   static const String signUp = 'SignUp';
+  static const String enterOTP = 'Enter OTP';
+  static const String enterOTPDesc = 'A 4 digit code has been sent to';
+
   static const String enterUsername = 'Enter Username';
   static const String enterPhoneNumber = 'Enter phone number';
   static const String enterEmailHint = 'Enter email';
   static const String enterPasswordHint = 'Enter password';
   static const String forgotPassword = 'Forgot your password?';
+  static const String forgotPassword2 = 'Forgot password?';
+  static const String forgotPasswordDesc =
+      'Don’t worry! It happens. Please enter the address\nassociated with your account.';
   static const String forgotPasswordTitle = 'Forgot password';
   static const String oldPassword = 'Old password';
   static const String newPassword = 'New password';

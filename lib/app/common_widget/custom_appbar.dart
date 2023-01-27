@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
-
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar(
       {Key? key, required this.title, this.leading, this.actions})

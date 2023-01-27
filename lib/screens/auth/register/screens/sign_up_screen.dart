@@ -28,7 +28,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-  bool isShow = false;
+  final textFieldFocusNode = FocusNode();
+  bool _obscured = false;
+
+  void toggleObscured() {
+    setState(() {
+      _obscured = !_obscured;
+      if (textFieldFocusNode.hasPrimaryFocus) {
+        return;
+      } // If focus is on text field, dont unfocus
+      textFieldFocusNode.canRequestFocus =
+          false; // Prevents focus if tap on eye
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +111,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Create new password',
                     controller: _createPasswordController,
                     title: 'Create password',
-                    isShow: isShow,
+                    toggleObscured: toggleObscured,
+                    isShow: _obscured,
                     prefixIcon: const Icon(Icons.lock),
                     inputAction: TextInputAction.next,
                     inputType: TextInputType.text),
@@ -110,7 +123,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Confirm your password',
                     controller: _createPasswordController,
                     title: 'Confirm password',
-                    isShow: isShow,
+                    isShow: _obscured,
+                    toggleObscured: toggleObscured,
                     prefixIcon: const Icon(Icons.lock),
                     inputAction: TextInputAction.done,
                     inputType: TextInputType.text),

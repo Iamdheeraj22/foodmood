@@ -25,8 +25,8 @@ class ColorsCollections {
     return MaterialColor(color.value, swatch);
   }
 
-  static final Color colorPrimary = ColorFromHex('#0A5597');
-  static Color colorPrimaryDark = ColorFromHex('#232f3f');
+  static Color colorPrimary = const Color(0xFFFF9D01);
+  static Color colorPrimaryDark = const Color(0xFFFF9D01);
   static Color colorAccent = ColorFromHex('#77A6F7');
   static Color cremeColor = ColorFromHex('#E9E9E9');
   static Color lightBlue = ColorFromHex('#17223E');
@@ -61,4 +61,7 @@ extension ColorExtenstion on BuildContext {
   Color get black => Theme.of(this).brightness == Brightness.light
       ? ColorsCollections.black
       : ColorsCollections.black;
+  Color get appOnbordingColor => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.appOnbordingColor
+      : ColorsCollections.appOnbordingColor;
 }

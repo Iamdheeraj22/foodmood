@@ -14,7 +14,7 @@ class CustomPasswordEditextText extends StatefulWidget {
       required this.title,
       required this.isShow,
       required this.inputAction,
-      required this.inputType})
+      required this.inputType, required this.toggleObscured})
       : super(key: key);
   final String hintText;
   final Icon? prefixIcon;
@@ -24,6 +24,7 @@ class CustomPasswordEditextText extends StatefulWidget {
   final TextInputAction inputAction;
   final bool isShow;
   final TextInputType inputType;
+  final VoidCallback toggleObscured;
   @override
   State<CustomPasswordEditextText> createState() =>
       _CustomPasswordEditextTextState();
@@ -57,7 +58,16 @@ class _CustomPasswordEditextTextState extends State<CustomPasswordEditextText> {
                   fontFamily: FontFamily.gilmerHeavy),
               decoration: InputDecoration(
                   prefixIcon: widget.prefixIcon,
-                  suffixIcon: widget.suffixIcon,
+                  suffixIcon:  Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
+          child: GestureDetector(
+            onTap:widget. toggleObscured,
+            child: Icon(
+              widget.isShow
+                  ? Icons.visibility_rounded
+                  : Icons.visibility_off_rounded,
+              size: 24,
+            ))),
                   hintStyle: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,
