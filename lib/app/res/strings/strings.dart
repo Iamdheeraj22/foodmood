@@ -6,9 +6,11 @@ class Strings {
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
   static const String verify = 'Verify';
+  static const String success = 'Success';
   static const String skip = 'Skip';
   static const String resetPassword = 'Reset Password';
-  static const String resetPasswordDesc = 'Atleast 9 characters with uppercase and\nlowercase letters.';
+  static const String resetPasswordDesc =
+      'Atleast 9 characters with uppercase and\nlowercase letters.';
   static const String name = 'Name';
   static const String enterName = 'Enter name';
   static const String enterLocation = 'Enter location';
@@ -48,6 +50,10 @@ class Strings {
   static const String yes = 'Yes';
   static const String no = 'No';
   static const String alreadyAccount = 'Already have an account?';
+  static const String successDesc1 =
+      'Your password has been reset successfully.';
+  static const String successDesc2 = 'Don’t forget the password again :)';
+  static const String goMoody = 'Go Moody Again';
 
   static const String description = 'Description';
   static const String enterDescription = 'Enter description';
