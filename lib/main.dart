@@ -6,6 +6,7 @@ import 'package:foodmood/app/routes/custom_router.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
+import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme(context),
         themeMode: appTheme.themeMode,
         onGenerateRoute: CustomRouter.generateRoute,
-        initialRoute: OtpVerificationScreen.id,
+        initialRoute: ResetPasswordScreen.id,
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(

@@ -7,6 +7,8 @@ class Strings {
   static const String submit = 'Submit';
   static const String verify = 'Verify';
   static const String skip = 'Skip';
+  static const String resetPassword = 'Reset Password';
+  static const String resetPasswordDesc = 'Atleast 9 characters with uppercase and\nlowercase letters.';
   static const String name = 'Name';
   static const String enterName = 'Enter name';
   static const String enterLocation = 'Enter location';
