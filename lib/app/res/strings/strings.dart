@@ -5,6 +5,7 @@ class Strings {
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
+  static const String verify = 'Verify';
   static const String skip = 'Skip';
   static const String name = 'Name';
   static const String enterName = 'Enter name';
@@ -62,6 +63,9 @@ class Strings {
   static const String phoneNumber = 'Phone Number';
   static const String signIn = 'Sign in';
   static const String signUp = 'SignUp';
+  static const String enterOTP = 'Enter OTP';
+  static const String enterOTPDesc = 'A 4 digit code has been sent to';
+
   static const String enterUsername = 'Enter Username';
   static const String enterPhoneNumber = 'Enter phone number';
   static const String enterEmailHint = 'Enter email';

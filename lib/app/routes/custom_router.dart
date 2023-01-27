@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
+import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
@@ -23,6 +24,9 @@ class CustomRouter {
       case ForgetPasswordScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => ForgetPasswordScreen());
+      case OtpVerificationScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const OtpVerificationScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
