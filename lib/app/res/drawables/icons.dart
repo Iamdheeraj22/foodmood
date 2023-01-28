@@ -18,4 +18,9 @@ class AppIcons {
   static const String logout = '${iconPath}logout.png';
   static const String theme = '${iconPath}theme.png';
   static const String info = '${iconPath}info_icon.png';
+  static const String shop = '${iconPath}shop.png';
+  static const String user = '${iconPath}user.png';
+  static const String category = '${iconPath}category.png';
+  static const String home = '${iconPath}home.png';
+  static const String cart = '${iconPath}cart.png';
 }
