@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
@@ -15,7 +16,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       title: Text(title),
       titleTextStyle: TextStyle(
-          color: Colors.white, fontSize: 16.sp, fontWeight: FontStyles.medium),
+          color: context.appPrimaryColor,
+          fontSize: 16.sp,
+          fontWeight: FontStyles.medium),
       leading: leading,
       surfaceTintColor: Colors.white,
       centerTitle: true,

@@ -16,4 +16,6 @@ class AppIcons {
   static const String truck = '${iconPath}truck.png';
   static const String accountSetting = '${iconPath}account_setting.png';
   static const String logout = '${iconPath}logout.png';
+  static const String theme = '${iconPath}theme.png';
+  static const String info = '${iconPath}info_icon.png';
 }

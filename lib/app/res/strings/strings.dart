@@ -6,6 +6,7 @@ class Strings {
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
   static const String verify = 'Verify';
+  static const String about = 'About';
   static const String success = 'Success';
   static const String skip = 'Skip';
   static const String resetPassword = 'Reset Password';
