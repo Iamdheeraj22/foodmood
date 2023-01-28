@@ -137,16 +137,16 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.helpSupport,
+                  title: Strings.settings,
                   onPressed: () {},
-                  itemICon: AppIcons.helpCircle),
+                  itemICon: AppIcons.accountSetting),
               SizedBox(
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.feedback,
+                  title: Strings.logout,
                   onPressed: () {},
-                  itemICon: AppIcons.feedback)
+                  itemICon: AppIcons.logout),
             ],
           )),
     );

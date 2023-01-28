@@ -14,4 +14,6 @@ class AppIcons {
   static const String helpCircle = '${iconPath}help_circle.png';
   static const String shoppingBag = '${iconPath}shopping_bag.png';
   static const String truck = '${iconPath}truck.png';
+  static const String accountSetting = '${iconPath}account_setting.png';
+  static const String logout = '${iconPath}logout.png';
 }

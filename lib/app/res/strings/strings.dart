@@ -142,4 +142,5 @@ class Strings {
   static const String transactions = 'Transactions';
   static const String helpSupport = 'Help & Supports';
   static const String feedback = 'Feedback';
+  static const String settings = 'Settings';
 }
