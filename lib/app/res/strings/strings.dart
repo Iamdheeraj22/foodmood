@@ -134,4 +134,12 @@ class Strings {
       'Want a food of your mood?\nGet your tummies filled with the\nedible good';
 
   static const String getMoody = 'Get Moody';
+
+  //Profile Screen Strings
+
+  static const String orderHistory = 'Order History';
+  static const String trackOrder = 'Track Order';
+  static const String transactions = 'Transactions';
+  static const String helpSupport = 'Help & Supports';
+  static const String feedback = 'Feedback';
 }

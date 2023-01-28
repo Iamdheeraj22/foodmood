@@ -9,4 +9,9 @@ class AppIcons {
   static const String google = '${iconPath}google.png';
   static const String facebook = '${iconPath}facebook.png';
   static const String apple = '${iconPath}apple.png';
+  static const String creditCard = '${iconPath}credit_card.png';
+  static const String feedback = '${iconPath}feedback.png';
+  static const String helpCircle = '${iconPath}help_circle.png';
+  static const String shoppingBag = '${iconPath}shopping_bag.png';
+  static const String truck = '${iconPath}truck.png';
 }
