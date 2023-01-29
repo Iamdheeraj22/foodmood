@@ -12,4 +12,6 @@ class Images {
   static const String logo = '${imagePath}logo.png';
   static const String takeaway = '${imagePath}take_away.png';
   static const String success = '${imagePath}success.png';
+  static const String edit = '${imagePath}edit.png';
+
 }

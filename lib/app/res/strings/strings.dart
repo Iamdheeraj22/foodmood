@@ -6,8 +6,10 @@ class Strings {
   static const String appName = 'Food Mood';
   static const String submit = 'Submit';
   static const String verify = 'Verify';
+  static const String about = 'About';
   static const String success = 'Success';
   static const String skip = 'Skip';
+  static const String preview = 'Profile Preview';
   static const String resetPassword = 'Reset Password';
   static const String resetPasswordDesc =
       'Atleast 9 characters with uppercase and\nlowercase letters.';
@@ -23,6 +25,8 @@ class Strings {
   static const String delete = 'Delete';
   static const String editItem = 'Edit Item';
   static const String refresh = 'Refresh';
+  static const String update = 'Update';
+  static const String cancel = 'Cancel';
   static const String uploading = 'Uploading...';
   static const String announcements = 'Announcements';
   static const String notificationNotFound = 'Notifications not found!';
@@ -134,4 +138,13 @@ class Strings {
       'Want a food of your mood?\nGet your tummies filled with the\nedible good';
 
   static const String getMoody = 'Get Moody';
+
+  //Profile Screen Strings
+
+  static const String orderHistory = 'Order History';
+  static const String trackOrder = 'Track Order';
+  static const String transactions = 'Transactions';
+  static const String helpSupport = 'Help & Supports';
+  static const String feedback = 'Feedback';
+  static const String settings = 'Settings';
 }
