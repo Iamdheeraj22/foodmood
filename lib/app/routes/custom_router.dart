@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodmood/screens/account_details/edit_screen/edit_screen.dart';
 import 'package:foodmood/screens/account_details/preview_screen/preview_screen.dart';
 import 'package:foodmood/screens/account_details/profile_screen/profile_screen.dart';
 import 'package:foodmood/screens/account_details/settings/settings_screen.dart';
@@ -42,7 +43,7 @@ class CustomRouter {
             builder: (_) => const ChangePasswordSuccessScreen());
       case ProfileScreenPage.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => ProfileScreenPage());
+            settings: settings, builder: (_) => const ProfileScreenPage());
       case SettingsScreenPage.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const SettingsScreenPage());
@@ -51,7 +52,10 @@ class CustomRouter {
             settings: settings, builder: (_) => HomePageScreen());
       case PreviewScreenPage.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => PreviewScreenPage());
+            settings: settings, builder: (_) => const PreviewScreenPage());
+      case EditScreenPage.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const EditScreenPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

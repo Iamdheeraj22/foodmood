@@ -23,4 +23,5 @@ class AppIcons {
   static const String category = '${iconPath}category.png';
   static const String home = '${iconPath}home.png';
   static const String cart = '${iconPath}cart.png';
+  static const String camera = '${iconPath}camera.png';
 }

@@ -25,6 +25,8 @@ class Strings {
   static const String delete = 'Delete';
   static const String editItem = 'Edit Item';
   static const String refresh = 'Refresh';
+  static const String update = 'Update';
+  static const String cancel = 'Cancel';
   static const String uploading = 'Uploading...';
   static const String announcements = 'Announcements';
   static const String notificationNotFound = 'Notifications not found!';
