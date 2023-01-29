@@ -9,6 +9,7 @@ class Strings {
   static const String about = 'About';
   static const String success = 'Success';
   static const String skip = 'Skip';
+  static const String preview = 'Preview';
   static const String resetPassword = 'Reset Password';
   static const String resetPasswordDesc =
       'Atleast 9 characters with uppercase and\nlowercase letters.';

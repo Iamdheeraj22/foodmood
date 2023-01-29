@@ -1,46 +1,67 @@
 import 'package:flutter/material.dart';
-
+import 'package:foodmood/app/common_widget/custom_button.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
-import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
-import 'package:foodmood/screens/account_details/profile_screen/widgets/option_item_card.dart';
+import 'package:foodmood/screens/account_details/preview_screen/widgets/color_item_card.dart';
 
-class ProfileScreenPage extends StatefulWidget {
-  const ProfileScreenPage({Key? key}) : super(key: key);
-  static const String id = '/profile_screen';
+class PreviewScreenPage extends StatefulWidget {
+  const PreviewScreenPage({Key? key}) : super(key: key);
+  static const String id = 'preview_screen';
   @override
-  State<ProfileScreenPage> createState() => _ProfileScreenPageState();
+  State<PreviewScreenPage> createState() => _PreviewScreenPageState();
 }
 
-class _ProfileScreenPageState extends State<ProfileScreenPage> {
+class _PreviewScreenPageState extends State<PreviewScreenPage> {
+  int selectionIndex = -1;
+  Color color = ColorsCollections.appPrimaryColor;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: TextWidget(
-          text: Strings.profile,
-          fontWeight: FontWeight.w700,
-          color: context.appPrimaryColor,
-          textSize: 24.sp,
-        ),
-      ),
-      body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 15.w),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          margin: EdgeInsets.symmetric(horizontal: 15.h),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: context.appPrimaryColor,
+                        size: 30.h,
+                      )),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  TextWidget(
+                    text: Strings.preview,
+                    textSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 1.h,
+                      color: context.black,
+                    ),
+                  )
+                ],
+              ),
               SizedBox(
-                height: 20.h,
+                height: 30.h,
               ),
               Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
                 padding: EdgeInsets.all(15.r),
                 height: 210.h,
-                decoration: BoxDecoration(color: context.appPrimaryColor),
+                decoration: BoxDecoration(color: color),
                 child: Column(
                   children: [
                     Row(
@@ -109,46 +130,52 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                 height: 20.h,
               ),
               Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
                 height: 1.h,
                 color: context.black,
               ),
               SizedBox(
-                height: 20.h,
+                height: 30.h,
               ),
-              OptionItemCard(
-                  title: Strings.orderHistory,
-                  onPressed: () {},
-                  itemICon: AppIcons.shoppingBag),
+              GridView.builder(
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                  ),
+                  itemCount: colorList.length,
+                  itemBuilder: (gContext, gIndex) {
+                    return ColorItemCard(
+                        color: colorList[gIndex].color,
+                        onTap: () {
+                          setState(() {
+                            selectionIndex = gIndex;
+                            color = colorList[gIndex].color;
+                          });
+                        },
+                        isSelected: selectionIndex == gIndex ? true : false);
+                  }),
               SizedBox(
-                height: 15.h,
+                height: 30.h,
               ),
-              OptionItemCard(
-                  title: Strings.trackOrder,
-                  onPressed: () {},
-                  itemICon: AppIcons.truck),
-              SizedBox(
-                height: 15.h,
-              ),
-              OptionItemCard(
-                  title: Strings.transactions,
-                  onPressed: () {},
-                  itemICon: AppIcons.creditCard),
-              SizedBox(
-                height: 15.h,
-              ),
-              OptionItemCard(
-                  title: Strings.settings,
-                  onPressed: () {},
-                  itemICon: AppIcons.accountSetting),
-              SizedBox(
-                height: 15.h,
-              ),
-              OptionItemCard(
-                  title: Strings.logout,
-                  onPressed: () {},
-                  itemICon: AppIcons.logout),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 15.h),
+                margin: EdgeInsets.symmetric(horizontal: 30.h),
+                decoration: BoxDecoration(color: context.appPrimaryColor),
+                child: InkWell(
+                  onTap: () {},
+                  child: Center(
+                      child: TextWidget(
+                    text: 'Edit your personal information',
+                    textSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                    color: context.white,
+                  )),
+                ),
+              )
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

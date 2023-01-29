@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodmood/screens/account_details/preview_screen/preview_screen.dart';
 import 'package:foodmood/screens/account_details/profile_screen/profile_screen.dart';
 import 'package:foodmood/screens/account_details/settings/settings_screen.dart';
 import 'package:foodmood/screens/auth/change_password_success_screen.dart';
@@ -48,6 +49,9 @@ class CustomRouter {
       case HomePageScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => HomePageScreen());
+      case PreviewScreenPage.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => PreviewScreenPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
