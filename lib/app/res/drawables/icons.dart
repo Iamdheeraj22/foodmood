@@ -24,4 +24,9 @@ class AppIcons {
   static const String home = '${iconPath}home.png';
   static const String cart = '${iconPath}cart.png';
   static const String camera = '${iconPath}camera.png';
+  static const String bell = '${iconPath}bell.png';
+  static const String heart = '${iconPath}heart.png';
+  static const String mic = '${iconPath}mic.png';
+  static const String search = '${iconPath}search.png';
+  static const String slider = '${iconPath}slider.png';
 }
