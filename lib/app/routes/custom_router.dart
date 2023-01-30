@@ -6,6 +6,7 @@ import 'package:foodmood/screens/account_details/settings/settings_screen.dart';
 import 'package:foodmood/screens/auth/change_password_success_screen.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
+import 'package:foodmood/screens/auth/logout/logout_screen.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
@@ -56,6 +57,9 @@ class CustomRouter {
       case EditScreenPage.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const EditScreenPage());
+      case LogoutScreenPage.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const LogoutScreenPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
