@@ -139,7 +139,32 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                   onTap: () {},
                 );
               }),
-        )
+        ),
+        SizedBox(
+          height: 40.h,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          child: Row(
+            children: [
+              TextWidget(
+                text: 'Popular moods you can get',
+                color: context.black,
+                fontWeight: FontWeight.w600,
+                textSize: 18.sp,
+              ),
+              const Spacer(),
+              InkWell(
+                child: TextWidget(
+                  text: Strings.viewall,
+                  color: context.appPrimaryColor,
+                  fontWeight: FontWeight.w400,
+                  textSize: 16.sp,
+                ),
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
