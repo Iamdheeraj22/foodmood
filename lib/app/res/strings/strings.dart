@@ -4,6 +4,7 @@ class Strings {
 
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
+  static const String viewall = 'View all';
   static const String submit = 'Submit';
   static const String verify = 'Verify';
   static const String about = 'About';
