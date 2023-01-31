@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/home/widgets/food_item_card.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({super.key});
@@ -123,6 +124,21 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
               )
             ],
           ),
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 5.w, top: 20.h),
+          height: 135.h,
+          child: ListView.builder(
+              itemCount: foodList.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return FoodItemCard(
+                  title: foodList[index].title,
+                  img: foodList[index].imagePath,
+                  onTap: () {},
+                );
+              }),
         )
       ],
     );

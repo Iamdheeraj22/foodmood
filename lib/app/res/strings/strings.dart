@@ -148,4 +148,12 @@ class Strings {
   static const String helpSupport = 'Help & Supports';
   static const String feedback = 'Feedback';
   static const String settings = 'Settings';
+
+
+  //Food strings
+  static const String biryani = 'Biryani';
+  static const String paneer = 'Paneer';
+  static const String pijja = 'Pizza';
+  static const String samosa = 'Samosa';
+  static const String thali = 'Thali';
 }
