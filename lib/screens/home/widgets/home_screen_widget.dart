@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/home/dish_info_overlay/dish_info_overlay.dart';
 import 'package:foodmood/screens/home/widgets/dish_item_card.dart';
 import 'package:foodmood/screens/home/widgets/food_brands_card.dart';
 import 'package:foodmood/screens/home/widgets/food_item_card.dart';
@@ -218,7 +219,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
           ),
           DishItemCard(
             onAdd: () {},
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (bu) {
+                    return DishInfoOverlay();
+                  });
+            },
           ),
           SizedBox(
             height: 40.h,
