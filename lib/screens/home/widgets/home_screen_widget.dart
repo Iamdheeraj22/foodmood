@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/home/widgets/dish_item_card.dart';
 import 'package:foodmood/screens/home/widgets/food_brands_card.dart';
 import 'package:foodmood/screens/home/widgets/food_item_card.dart';
 
@@ -187,6 +188,40 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
           ),
           SizedBox(
             height: 30.h,
+          ),
+
+          //Recommended dishes
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
+            child: Row(
+              children: [
+                TextWidget(
+                  text: 'Popular Dishes',
+                  color: context.black,
+                  fontWeight: FontWeight.w600,
+                  textSize: 18.sp,
+                ),
+                const Spacer(),
+                InkWell(
+                  child: TextWidget(
+                    text: Strings.viewall,
+                    color: context.appPrimaryColor,
+                    fontWeight: FontWeight.w400,
+                    textSize: 16.sp,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          DishItemCard(
+            onAdd: () {},
+            onTap: () {},
+          ),
+          SizedBox(
+            height: 40.h,
           ),
         ],
       ),
