@@ -221,6 +221,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
             onAdd: () {},
             onTap: () {
               showModalBottomSheet(
+                  isScrollControlled: true,
                   backgroundColor: Colors.transparent,
                   context: context,
                   builder: (bu) {
