@@ -10,6 +10,7 @@ import 'package:foodmood/screens/auth/logout/logout_screen.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
+import 'package:foodmood/screens/cart/screens/cart_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
@@ -64,6 +65,9 @@ class CustomRouter {
       case PaymentScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => PaymentScreen());
+      case CartScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const CartScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
