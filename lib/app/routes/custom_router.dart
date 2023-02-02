@@ -13,6 +13,7 @@ import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart'
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/payment/screens/payment_screen.dart';
 
 class CustomRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -60,6 +61,9 @@ class CustomRouter {
       case LogoutScreenPage.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const LogoutScreenPage());
+      case PaymentScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => PaymentScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

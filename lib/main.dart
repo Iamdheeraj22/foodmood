@@ -9,6 +9,7 @@ import 'package:foodmood/screens/auth/logout/logout_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/payment/screens/payment_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme(context),
         themeMode: appTheme.themeMode,
         onGenerateRoute: CustomRouter.generateRoute,
-        initialRoute: HomePageScreen.id,
+        initialRoute: PaymentScreen.id,
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(
