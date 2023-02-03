@@ -15,7 +15,9 @@ class PriceDetailsBottomsheet extends StatelessWidget {
             height: 30.h,
             width: 30.w,
             child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 backgroundColor: context.white,
                 child: Icon(
                   Icons.close,

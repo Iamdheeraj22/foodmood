@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/styles/app_theme.dart';
 import 'package:foodmood/app/routes/custom_router.dart';
 import 'package:foodmood/screens/account_details/edit_screen/edit_screen.dart';
 import 'package:foodmood/screens/account_details/preview_screen/preview_screen.dart';
+import 'package:foodmood/screens/address/screens/addresses_screen.dart';
 import 'package:foodmood/screens/auth/logout/logout_screen.dart';
 import 'package:foodmood/screens/cart/screens/cart_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme(context),
         themeMode: appTheme.themeMode,
         onGenerateRoute: CustomRouter.generateRoute,
-        initialRoute: CartScreen.id,
+        initialRoute: AddressScreen.id,
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(

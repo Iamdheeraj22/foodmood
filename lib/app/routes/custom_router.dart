@@ -3,6 +3,7 @@ import 'package:foodmood/screens/account_details/edit_screen/edit_screen.dart';
 import 'package:foodmood/screens/account_details/preview_screen/preview_screen.dart';
 import 'package:foodmood/screens/account_details/profile_screen/profile_screen.dart';
 import 'package:foodmood/screens/account_details/settings/settings_screen.dart';
+import 'package:foodmood/screens/address/screens/addresses_screen.dart';
 import 'package:foodmood/screens/auth/change_password_success_screen.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
@@ -68,6 +69,9 @@ class CustomRouter {
       case CartScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const CartScreen());
+      case AddressScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => AddressScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
