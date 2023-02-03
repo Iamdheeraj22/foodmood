@@ -41,6 +41,7 @@ class ColorsCollections {
   static const Color appGreyColor1 = Color(0xFFDADADA);
   static const Color appGreyColor2 = Color(0xFFD9D9D9);
   static const Color appTitleColor1 = Color(0xFF4E4E4E);
+  static const Color dividerGreyColor = Color(0xFFBDBDBD);
 }
 
 extension ColorExtenstion on BuildContext {
@@ -68,4 +69,7 @@ extension ColorExtenstion on BuildContext {
   Color get appTitleColor1 => Theme.of(this).brightness == Brightness.light
       ? ColorsCollections.appTitleColor1
       : ColorsCollections.appTitleColor1;
+  Color get dividerGreyColor => Theme.of(this).brightness == Brightness.light
+      ? ColorsCollections.dividerGreyColor
+      : ColorsCollections.dividerGreyColor;
 }

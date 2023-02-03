@@ -4,6 +4,7 @@ class Strings {
 
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
+  static const String viewall = 'View all';
   static const String submit = 'Submit';
   static const String verify = 'Verify';
   static const String about = 'About';
@@ -147,4 +148,23 @@ class Strings {
   static const String helpSupport = 'Help & Supports';
   static const String feedback = 'Feedback';
   static const String settings = 'Settings';
+
+  //Food strings
+  static const String biryani = 'Biryani';
+  static const String paneer = 'Paneer';
+  static const String pijja = 'Pizza';
+  static const String samosa = 'Samosa';
+  static const String thali = 'Thali';
+
+  //Top Food Brand Names
+  static const String burgerKing = 'Burger King';
+  static const String dominos = 'Dominos';
+  static const String dunkinDonuts = 'Dunkin Donuts';
+  static const String kfc = 'KFC';
+  static const String mcdonalds = 'Mcdonalds';
+  static const String pizzaHhut = 'Pizza Hunt';
+  static const String popeyesChicken = 'Popeyes Chicken';
+  static const String starkbucksCoffee = 'Starkbucks Coffee';
+  static const String subway = 'Subway';
+  static const String wendysLogo = 'Wendys';
 }

@@ -3,15 +3,19 @@ import 'package:foodmood/screens/account_details/edit_screen/edit_screen.dart';
 import 'package:foodmood/screens/account_details/preview_screen/preview_screen.dart';
 import 'package:foodmood/screens/account_details/profile_screen/profile_screen.dart';
 import 'package:foodmood/screens/account_details/settings/settings_screen.dart';
+import 'package:foodmood/screens/address/screens/addresses_screen.dart';
 import 'package:foodmood/screens/auth/change_password_success_screen.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
+import 'package:foodmood/screens/auth/logout/logout_screen.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
+import 'package:foodmood/screens/cart/screens/cart_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/payment/screens/payment_screen.dart';
 
 class CustomRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -56,6 +60,18 @@ class CustomRouter {
       case EditScreenPage.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const EditScreenPage());
+      case LogoutScreenPage.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const LogoutScreenPage());
+      case PaymentScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => PaymentScreen());
+      case CartScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const CartScreen());
+      case AddressScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => AddressScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
