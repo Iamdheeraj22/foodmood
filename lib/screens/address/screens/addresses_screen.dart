@@ -4,10 +4,9 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/screens/address/widgets/address_item_card.dart';
-import 'package:foodmood/screens/payment/widgets/payment_item_card.dart';
 
 class AddressScreen extends StatefulWidget {
-  AddressScreen({Key? key}) : super(key: key);
+  const AddressScreen({Key? key}) : super(key: key);
   static const String id = '/address_screen';
   @override
   State<AddressScreen> createState() => _AddressScreenState();
@@ -125,8 +124,8 @@ class _AddressScreenState extends State<AddressScreen> {
               fontWeight: FontWeight.w700,
               color: context.black,
             ),
-            AddressItemCard(),
-            AddressItemCard(),
+            const AddressItemCard(),
+            const AddressItemCard(),
             SizedBox(
               height: 30.h,
             ),
@@ -136,7 +135,7 @@ class _AddressScreenState extends State<AddressScreen> {
               fontWeight: FontWeight.w700,
               color: context.black,
             ),
-            AddressItemCard(),
+            const AddressItemCard(),
           ]),
         ));
   }

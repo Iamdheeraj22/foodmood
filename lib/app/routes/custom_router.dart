@@ -16,6 +16,7 @@ import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
 import 'package:foodmood/screens/payment/screens/payment_screen.dart';
+import 'package:foodmood/screens/restaurant/screens/restaurant_screen.dart';
 
 class CustomRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -71,7 +72,10 @@ class CustomRouter {
             settings: settings, builder: (_) => const CartScreen());
       case AddressScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => AddressScreen());
+            settings: settings, builder: (_) => const AddressScreen());
+      case RestaurantScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const RestaurantScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
