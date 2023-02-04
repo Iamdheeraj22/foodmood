@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/styles/app_theme.dart';
 import 'package:foodmood/app/routes/custom_router.dart';
 
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/order_place_confirm/order_place_confirm.dart';
 
 import 'package:foodmood/screens/restaurant/screens/restaurant_screen.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme(context),
         themeMode: appTheme.themeMode,
         onGenerateRoute: CustomRouter.generateRoute,
-        initialRoute: RestaurantScreen.id,
+        initialRoute: OrderPlaceConfirmScreen.id,
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(

@@ -15,6 +15,7 @@ import 'package:foodmood/screens/cart/screens/cart_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/order_place_confirm/order_place_confirm.dart';
 import 'package:foodmood/screens/payment/screens/payment_screen.dart';
 import 'package:foodmood/screens/restaurant/screens/restaurant_screen.dart';
 
@@ -76,6 +77,9 @@ class CustomRouter {
       case RestaurantScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const RestaurantScreen());
+      case OrderPlaceConfirmScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const OrderPlaceConfirmScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

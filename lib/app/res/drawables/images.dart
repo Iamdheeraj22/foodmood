@@ -15,4 +15,5 @@ class Images {
   static const String edit = '${imagePath}edit.png';
   static const String logoutBck = '${imagePath}logout_bck.png';
   static const String offer = '${imagePath}offer.png';
+  static const String offferSuccess = '${imagePath}order_success.png';
 }
