@@ -4,6 +4,7 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/restaurant/widgets/retaurent_item_card.dart';
 
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({Key? key}) : super(key: key);
@@ -116,6 +117,17 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 )
               ],
             ),
+            SizedBox(
+              height: 30.h,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 2,
+                  shrinkWrap: true,
+                  itemBuilder: (ctc, index) {
+                    return const RestaurentItemCard();
+                  }),
+            )
           ],
         ),
       ),
