@@ -7,6 +7,8 @@ import 'package:foodmood/screens/food_brands/screens/food_brands_screen.dart';
 
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
 
+import 'screens/today_mood_dishes/screens/today_mood_dishes.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme(context),
         themeMode: appTheme.themeMode,
         onGenerateRoute: CustomRouter.generateRoute,
-        initialRoute: FoodBrandsScreen.id,
+        initialRoute: TodayMoodDishes.id,
         home: OnBoardingScreen(),
         builder: (context, child) {
           SizeConfig.initialize(
