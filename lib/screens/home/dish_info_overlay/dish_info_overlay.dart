@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/food.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
+import 'package:foodmood/screens/cart/screens/cart_screen.dart';
 import 'package:foodmood/screens/home/dish_info_overlay/widgets/extra_item_card.dart';
 import 'package:foodmood/screens/home/dish_info_overlay/widgets/item_type_card.dart';
 
@@ -158,7 +159,9 @@ class DishInfoOverlay extends StatelessWidget {
                         width: double.infinity,
                         margin: EdgeInsets.symmetric(horizontal: 50.w),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, CartScreen.id);
+                          },
                           child: TextWidget(
                             text: 'Add to cart',
                             textSize: 20.sp,

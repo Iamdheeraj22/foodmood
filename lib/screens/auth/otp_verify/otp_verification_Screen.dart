@@ -7,10 +7,11 @@ import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/screens/auth/otp_verify/widgets/otp_editext_widget.dart';
+import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
-  static const String id = 'otp_verification_screen';
+  static const String id = '/otp_verification_screen';
   @override
   State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
 }
@@ -23,37 +24,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        leading: SizedBox(
-          height: 48.h,
-          width: 48.w,
-          child: InkWell(
-            onTap: () {},
-            child: Icon(
-              Icons.keyboard_arrow_left,
-              color: context.appPrimaryColor,
-              size: 48.h,
-            ),
-          ),
-        ),
-        title: '',
-      ),
+      appBar: const NewCustomAppBar(title: 'Enter OTP'),
       body: SingleChildScrollView(
           child: Column(
         children: [
           SizedBox(
-            height: 30.h,
-          ),
-          Center(
-            child: TextWidget(
-              text: Strings.enterOTP,
-              textSize: 24.sp,
-              fontWeight: FontWeight.w700,
-              color: context.appPrimaryColor,
-            ),
-          ),
-          SizedBox(
-            height: 25.h,
+            height: 40.h,
           ),
           RichText(
               text: TextSpan(children: [
@@ -109,7 +85,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 label: Strings.verify,
                 fontWeight: FontStyles.bold,
                 fontSize: 16.sp,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.pushNamed(context, ResetPasswordScreen.id);
+                }),
           ),
         ],
       )),

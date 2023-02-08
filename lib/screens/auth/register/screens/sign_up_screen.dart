@@ -10,11 +10,13 @@ import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/app/utils/snack_bar.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
+import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
-  static const String id = "sign_up_screen";
+  static const String id = "/sign_up_screen";
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
@@ -45,15 +47,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(
-          leading: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.keyboard_arrow_left,
-                color: context.appPrimaryColor,
-                size: 50.r,
-              )),
-          title: '',
+        appBar: const NewCustomAppBar(
+          title: 'SignUp',
         ),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -61,18 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 30.h,
-                ),
-                Center(
-                  child: TextWidget(
-                    text: Strings.signUp,
-                    textSize: 24.sp,
-                    fontWeight: FontWeight.w700,
-                    color: context.appPrimaryColor,
-                  ),
-                ),
-                SizedBox(
-                  height: 100.h,
+                  height: 20.h,
                 ),
                 CustomEditTextWithTitle(
                   controller: _nameController,
@@ -171,15 +155,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     CircleIconButton(
                       icon: AppIcons.google,
-                      callback: () {},
+                      callback: () {
+                        showSnackBar('Under Development', context: context);
+                      },
                     ),
                     CircleIconButton(
                       icon: AppIcons.facebook,
-                      callback: () {},
+                      callback: () {
+                        showSnackBar('Under Development', context: context);
+                      },
                     ),
                     CircleIconButton(
                       icon: AppIcons.apple,
-                      callback: () {},
+                      callback: () {
+                        showSnackBar('Under Development', context: context);
+                      },
                     )
                   ],
                 ),
@@ -194,12 +184,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style:
                             TextStyle(color: context.black, fontSize: 14.sp)),
                     TextSpan(
-                      text: Strings.signUp,
+                      text: Strings.login,
                       style: TextStyle(
                           color: context.appPrimaryColor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pop(context);
+                        },
                     )
                   ])),
                 ),

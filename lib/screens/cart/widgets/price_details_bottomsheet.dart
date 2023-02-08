@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
+import 'package:foodmood/app/utils/snack_bar.dart';
 
 class PriceDetailsBottomsheet extends StatelessWidget {
   @override
@@ -30,49 +31,55 @@ class PriceDetailsBottomsheet extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              RowItem(txt1: 'SubTotal', txt2: '₹ 175'),
-              RowItem(txt1: 'Taxes & Fees', txt2: '₹ 30'),
-              RowItem(txt1: 'Delivery Charges', txt2: 'Free'),
+              const RowItem(txt1: 'SubTotal', txt2: '₹ 175'),
+              const RowItem(txt1: 'Taxes & Fees', txt2: '₹ 30'),
+              const RowItem(txt1: 'Delivery Charges', txt2: 'Free'),
               Container(
                 height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15.h),
                 color: context.white,
               ),
-              RowItem(txt1: 'Total', txt2: '₹ 205'),
+              const RowItem(txt1: 'Total', txt2: '₹ 205'),
               SizedBox(
                 height: 15.h,
               ),
-              Container(
-                alignment: Alignment.center,
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 20.h),
-                decoration: BoxDecoration(
-                    border: Border.all(color: context.white, width: 1.h)),
-                margin: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-                child: TextWidget(
-                  text: 'Voucher Code',
-                  fontWeight: FontWeight.w600,
-                  textSize: 20.sp,
-                  color: context.white,
-                ),
-              ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  showSnackBar('Under development', context: context);
+                },
                 child: Container(
                   alignment: Alignment.center,
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 20.h),
-                  decoration: BoxDecoration(color: context.white),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: context.white, width: 1.h)),
                   margin:
                       EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
                   child: TextWidget(
-                    text: 'Checkout Order',
+                    text: 'Voucher Code',
                     fontWeight: FontWeight.w600,
                     textSize: 20.sp,
-                    color: context.appPrimaryColor,
+                    color: context.white,
                   ),
                 ),
               ),
+              // InkWell(
+              //   onTap: () {},
+              //   child: Container(
+              //     alignment: Alignment.center,
+              //     width: double.infinity,
+              //     padding: EdgeInsets.symmetric(vertical: 20.h),
+              //     decoration: BoxDecoration(color: context.white),
+              //     margin:
+              //         EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
+              //     child: TextWidget(
+              //       text: 'Checkout Order',
+              //       fontWeight: FontWeight.w600,
+              //       textSize: 20.sp,
+              //       color: context.appPrimaryColor,
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: 30.h,
               ),

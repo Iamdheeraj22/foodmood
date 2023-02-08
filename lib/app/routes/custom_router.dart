@@ -12,10 +12,14 @@ import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:foodmood/screens/cart/screens/cart_screen.dart';
+import 'package:foodmood/screens/food_brands/screens/food_brands_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/order_place_confirm/order_place_confirm.dart';
 import 'package:foodmood/screens/payment/screens/payment_screen.dart';
+import 'package:foodmood/screens/restaurant/screens/restaurant_screen.dart';
+import 'package:foodmood/screens/today_mood_dishes/screens/today_mood_dishes.dart';
 
 class CustomRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -71,7 +75,20 @@ class CustomRouter {
             settings: settings, builder: (_) => const CartScreen());
       case AddressScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => AddressScreen());
+            settings: settings, builder: (_) => const AddressScreen());
+      case RestaurantScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const RestaurantScreen());
+      case OrderPlaceConfirmScreen.id:
+        return MaterialPageRoute(
+            settings: settings,
+            builder: (_) => const OrderPlaceConfirmScreen());
+      case FoodBrandsScreen.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const FoodBrandsScreen());
+      case TodayMoodDishes.id:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const TodayMoodDishes());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

@@ -17,7 +17,7 @@ class CircleIconButton extends StatelessWidget {
             color: context.black,
           )),
       height: 100.h,
-      width: 82.w,
+      width: 100.h,
       child: InkWell(
           borderRadius: BorderRadius.circular(100.r),
           onTap: callback,

@@ -60,10 +60,8 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
                     color: ColorsCollections.appPrimaryColor,
                     label: Strings.getMoody,
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, LoginScreen.id, ModalRoute.withName('/'));
                     }))
           ],
         ),

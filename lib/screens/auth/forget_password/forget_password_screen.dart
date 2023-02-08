@@ -7,10 +7,11 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   ForgetPasswordScreen({Key? key}) : super(key: key);
-  static const String id = 'forget_password_screen';
+  static const String id = '/forget_password_screen';
   @override
   State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
@@ -21,32 +22,14 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.keyboard_arrow_left,
-              color: context.appPrimaryColor,
-              size: 50.r,
-            )),
-        title: '',
+      appBar: const NewCustomAppBar(
+        title: Strings.forgotPassword2,
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: SingleChildScrollView(
             child: Column(
           children: [
-            SizedBox(
-              height: 30.h,
-            ),
-            Center(
-              child: TextWidget(
-                text: Strings.forgotPassword2,
-                textSize: 24.sp,
-                fontWeight: FontWeight.w700,
-                color: context.appPrimaryColor,
-              ),
-            ),
             SizedBox(
               height: 20.h,
             ),
@@ -75,7 +58,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 label: Strings.submit,
                 fontWeight: FontStyles.bold,
                 fontSize: 16.sp,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.pushNamed(context, OtpVerificationScreen.id);
+                }),
           ],
         )),
       ),

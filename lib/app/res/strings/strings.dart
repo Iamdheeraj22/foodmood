@@ -167,4 +167,7 @@ class Strings {
   static const String starkbucksCoffee = 'Starkbucks Coffee';
   static const String subway = 'Subway';
   static const String wendysLogo = 'Wendys';
+
+  static const String addresses = 'Addresses';
+  static const String restarant = 'Restarants';
 }

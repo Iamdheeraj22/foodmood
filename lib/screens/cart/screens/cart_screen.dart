@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
+import 'package:foodmood/screens/address/screens/addresses_screen.dart';
 import 'package:foodmood/screens/cart/widgets/cart_item_card.dart';
 import 'package:foodmood/screens/cart/widgets/price_details_bottomsheet.dart';
 
@@ -75,7 +76,9 @@ class _CartScreenState extends State<CartScreen> {
                 ),
                 const Spacer(),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, AddressScreen.id);
+                  },
                   child: Card(
                     child: Container(
                         alignment: Alignment.center,
