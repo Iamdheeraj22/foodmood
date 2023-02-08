@@ -25,105 +25,108 @@ class CustomDishCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Row(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(5.r),
-          child: Image.asset(
-            image,
-            height: 200.h,
-            width: 200.h,
-            fit: BoxFit.cover,
+        child: InkWell(
+      onTap: onTap,
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(5.r),
+            child: Image.asset(
+              image,
+              height: 200.h,
+              width: 200.h,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        SizedBox(
-          width: 10.w,
-        ),
-        Container(
-          margin: EdgeInsets.all(
-            5.h,
+          SizedBox(
+            width: 10.w,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Container(
+            margin: EdgeInsets.all(
+              5.h,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextWidget(
+                  text: title,
+                  fontWeight: FontWeight.w600,
+                  textSize: 22.sp,
+                  color: context.black,
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_pin,
+                      size: 20.h,
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    TextWidget(
+                        text: '$distance away',
+                        textSize: 20.sp,
+                        fontWeight: FontWeight.w600,
+                        color: context.black),
+                  ],
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.timer,
+                      size: 20,
+                      color: context.appTitleColor1,
+                    ),
+                    SizedBox(
+                      width: 3.w,
+                    ),
+                    TextWidget(
+                      text: '$time | $distance',
+                      textSize: 14.sp,
+                      color: context.black,
+                      fontWeight: FontWeight.w400,
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Spacer(),
+          Column(
             children: [
               TextWidget(
-                text: title,
-                fontWeight: FontWeight.w600,
-                textSize: 22.sp,
-                color: context.black,
+                text: '\$ $price',
+                fontWeight: FontWeight.w700,
+                textSize: 20.sp,
               ),
               SizedBox(
-                height: 5.h,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.location_pin,
-                    size: 20.h,
-                  ),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  TextWidget(
-                      text: '$distance away',
-                      textSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                      color: context.black),
-                ],
+                height: 30.h,
               ),
               SizedBox(
-                height: 5.h,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.timer,
-                    size: 20,
-                    color: context.appTitleColor1,
+                height: 50.h,
+                width: 50.h,
+                child: FloatingActionButton(
+                  backgroundColor: context.appPrimaryColor,
+                  onPressed: () {},
+                  child: Icon(
+                    Icons.add,
+                    color: context.white,
                   ),
-                  SizedBox(
-                    width: 3.w,
-                  ),
-                  TextWidget(
-                    text: '$time | $distance',
-                    textSize: 14.sp,
-                    color: context.black,
-                    fontWeight: FontWeight.w400,
-                  )
-                ],
-              ),
+                ),
+              )
             ],
           ),
-        ),
-        Spacer(),
-        Column(
-          children: [
-            TextWidget(
-              text: '\$ $price',
-              fontWeight: FontWeight.w700,
-              textSize: 20.sp,
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            SizedBox(
-              height: 50.h,
-              width: 50.h,
-              child: FloatingActionButton(
-                backgroundColor: context.appPrimaryColor,
-                onPressed: () {},
-                child: Icon(
-                  Icons.add,
-                  color: context.white,
-                ),
-              ),
-            )
-          ],
-        ),
-        SizedBox(
-          width: 10.w,
-        )
-      ],
+          SizedBox(
+            width: 10.w,
+          )
+        ],
+      ),
     ));
   }
 }
