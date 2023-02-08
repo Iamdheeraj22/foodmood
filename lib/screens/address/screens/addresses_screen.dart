@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foodmood/app/common_widget/custom_appbar.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/screens/address/widgets/address_item_card.dart';
+import 'package:foodmood/screens/payment/screens/payment_screen.dart';
 
 class AddressScreen extends StatefulWidget {
   const AddressScreen({Key? key}) : super(key: key);
@@ -17,30 +19,7 @@ class _AddressScreenState extends State<AddressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: TextWidget(
-            text: 'Addresses',
-            textSize: 20.sp,
-            fontWeight: FontWeight.w600,
-            color: context.appPrimaryColor,
-          ),
-          centerTitle: true,
-          leading: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(200),
-              onTap: () {},
-              child: SizedBox(
-                height: 40.h,
-                width: 40.h,
-                child: Icon(
-                  Icons.keyboard_arrow_left,
-                  color: context.appPrimaryColor,
-                ),
-              ),
-            ),
-          ),
-        ),
+        appBar: const NewCustomAppBar(title: 'Addresses'),
         body: Container(
           margin: EdgeInsets.only(top: 20.h),
           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -62,13 +41,14 @@ class _AddressScreenState extends State<AddressScreen> {
                 enableSuggestions: true,
                 textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(left: 20.h),
                   border: InputBorder.none,
                   hintText: 'Search for area, street name',
                   hintStyle: TextStyle(
                       fontSize: 16.sp,
                       color: context.appGreyColor2,
                       fontWeight: FontWeight.w400),
-                  prefixIcon: InkWell(
+                  suffixIcon: InkWell(
                       borderRadius: BorderRadius.circular(1000.r),
                       onTap: () {},
                       child: SizedBox(
@@ -86,7 +66,9 @@ class _AddressScreenState extends State<AddressScreen> {
             ),
             Card(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, PaymentScreen.id);
+                },
                 child: Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 15.h, horizontal: 5.w),
@@ -124,8 +106,16 @@ class _AddressScreenState extends State<AddressScreen> {
               fontWeight: FontWeight.w700,
               color: context.black,
             ),
-            const AddressItemCard(),
-            const AddressItemCard(),
+            AddressItemCard(
+              onTap: () {
+                Navigator.pushNamed(context, PaymentScreen.id);
+              },
+            ),
+            AddressItemCard(
+              onTap: () {
+                Navigator.pushNamed(context, PaymentScreen.id);
+              },
+            ),
             SizedBox(
               height: 30.h,
             ),
@@ -135,7 +125,11 @@ class _AddressScreenState extends State<AddressScreen> {
               fontWeight: FontWeight.w700,
               color: context.black,
             ),
-            const AddressItemCard(),
+            AddressItemCard(
+              onTap: () {
+                Navigator.pushNamed(context, PaymentScreen.id);
+              },
+            ),
           ]),
         ));
   }

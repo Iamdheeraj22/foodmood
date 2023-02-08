@@ -5,10 +5,13 @@ import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/screens/food_brands/screens/food_brands_screen.dart';
 import 'package:foodmood/screens/home/dish_info_overlay/dish_info_overlay.dart';
 import 'package:foodmood/screens/home/widgets/dish_item_card.dart';
 import 'package:foodmood/screens/home/widgets/food_brands_card.dart';
 import 'package:foodmood/screens/home/widgets/food_item_card.dart';
+import 'package:foodmood/screens/today_mood_dishes/screens/today_mood_dishes.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({super.key});
@@ -119,6 +122,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                 ),
                 const Spacer(),
                 InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, TodayMoodDishes.id);
+                  },
                   child: TextWidget(
                     text: Strings.viewall,
                     color: context.appPrimaryColor,
@@ -140,7 +146,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                   return FoodItemCard(
                     title: foodList[index].title,
                     img: foodList[index].imagePath,
-                    onTap: () {},
+                    onTap: () {
+                      showSnackBar('Under Development', context: context);
+                    },
                   );
                 }),
           ),
@@ -160,6 +168,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                 ),
                 const Spacer(),
                 InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, FoodBrandsScreen.id);
+                  },
                   child: TextWidget(
                     text: Strings.viewall,
                     color: context.appPrimaryColor,
@@ -181,7 +192,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return FoodBrandsCard(
-                    onTap: () {},
+                    onTap: () {
+                      showSnackBar('Under Development', context: context);
+                    },
                     brandLogo: foodBrandsList[index].brandLogo,
                     brandName: foodBrandsList[index].brandName,
                   );
@@ -218,14 +231,16 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
             height: 20.h,
           ),
           DishItemCard(
-            onAdd: () {},
+            onAdd: () {
+              showSnackBar('Under development', context: context);
+            },
             onTap: () {
               showModalBottomSheet(
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
                   context: context,
                   builder: (bu) {
-                    return DishInfoOverlay();
+                    return const DishInfoOverlay();
                   });
             },
           ),

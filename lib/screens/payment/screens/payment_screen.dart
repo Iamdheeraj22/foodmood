@@ -5,6 +5,7 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/payments.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
+import 'package:foodmood/screens/order_place_confirm/order_place_confirm.dart';
 import 'package:foodmood/screens/payment/widgets/payment_item_card.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -18,23 +19,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.keyboard_arrow_left,
-              color: context.appPrimaryColor,
-              size: 50.r,
-            )),
-        title: Text(
-          'Payment',
-          style: TextStyle(
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w500,
-              color: context.appPrimaryColor),
-        ),
-        centerTitle: true,
-      ),
+      appBar: NewCustomAppBar(title: 'Payment'),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: SingleChildScrollView(
@@ -49,7 +34,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
             extendWidth: false,
             title: 'Debit / Credit Card',
             img: AppIcons.creditCard,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+            },
           ),
 
           SizedBox(
@@ -59,7 +46,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               extendWidth: true,
               title: 'Pay with UPI',
               img: PaymentsStrings.upi,
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+              }),
 
           SizedBox(
             height: 10.h,
@@ -68,7 +57,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               extendWidth: true,
               title: 'Payment Wallet',
               img: PaymentsStrings.paytm,
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+              }),
           SizedBox(
             height: 10.h,
           ),
@@ -76,7 +67,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               extendWidth: true,
               title: 'Phonepe Wallet',
               img: PaymentsStrings.phonepe,
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+              }),
 
           SizedBox(
             height: 10.h,
@@ -85,7 +78,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               extendWidth: false,
               title: 'Netbanking',
               img: PaymentsStrings.bank,
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+              }),
 
           SizedBox(
             height: 10.h,
@@ -94,7 +89,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               extendWidth: true,
               title: 'Pay on Delivery',
               img: PaymentsStrings.biCash,
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, OrderPlaceConfirmScreen.id);
+              }),
         ])),
       ),
     );

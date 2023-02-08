@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
 class AddressItemCard extends StatelessWidget {
-  const AddressItemCard({Key? key}) : super(key: key);
   // final String typeName;
   // final String address;
   // final String icon;
+  VoidCallback onTap;
+  AddressItemCard({
+    Key? key,
+    required this.onTap,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 15.h),
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

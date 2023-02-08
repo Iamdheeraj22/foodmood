@@ -16,6 +16,7 @@ import 'package:foodmood/app/utils/snack_bar.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
+import 'package:foodmood/screens/home/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -145,7 +146,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   label: Strings.signIn,
                   fontWeight: FontStyles.bold,
                   fontSize: 16.sp,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, HomePageScreen.id);
+                  }),
               SizedBox(
                 height: 60.h,
               ),

@@ -18,30 +18,33 @@ class FoodItemCard extends StatelessWidget {
       margin: EdgeInsets.only(right: 15.w),
       height: 135.h,
       width: 135.w,
-      child: Stack(
-        children: [
-          Image.asset(
-            height: 135.h,
-            width: 135.w,
-            img,
-            fit: BoxFit.fill,
-          ),
-          Expanded(
-            child: Container(
-              color: const Color.fromARGB(50, 0, 0, 0),
+      child: InkWell(
+        onTap: onTap,
+        child: Stack(
+          children: [
+            Image.asset(
+              height: 135.h,
+              width: 135.w,
+              img,
+              fit: BoxFit.fill,
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 5.h),
-            alignment: Alignment.bottomCenter,
-            child: TextWidget(
-              text: title,
-              textSize: 20.sp,
-              fontWeight: FontWeight.w500,
-              color: context.white,
+            Expanded(
+              child: Container(
+                color: const Color.fromARGB(50, 0, 0, 0),
+              ),
             ),
-          )
-        ],
+            Container(
+              margin: EdgeInsets.only(bottom: 5.h),
+              alignment: Alignment.bottomCenter,
+              child: TextWidget(
+                text: title,
+                textSize: 20.sp,
+                fontWeight: FontWeight.w500,
+                color: context.white,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
