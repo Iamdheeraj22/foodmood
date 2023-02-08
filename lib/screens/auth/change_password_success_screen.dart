@@ -6,6 +6,8 @@ import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/auth/login/login_screen.dart';
+import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
 
 class ChangePasswordSuccessScreen extends StatefulWidget {
   const ChangePasswordSuccessScreen({Key? key}) : super(key: key);
@@ -72,7 +74,12 @@ class _ChangePasswordSuccessScreenState
               label: Strings.goMoody,
               fontWeight: FontStyles.bold,
               fontSize: 16.sp,
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => OnBoardingScreen()),
+                    (route) => false);
+              }),
         ],
       ),
     ));

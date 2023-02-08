@@ -17,7 +17,7 @@ showSnackBar(String data, {BuildContext? context, Duration? duration}) {
       elevation: 5,
       content: TextWidget(
         text: data,
-        color: Colors.white,
+        color: Colors.black,
         textSize: 14.sp,
         fontWeight: FontStyles.medium,
       ),

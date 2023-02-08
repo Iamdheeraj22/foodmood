@@ -6,6 +6,7 @@ import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/screens/auth/change_password_success_screen.dart';
 
 import '../../../app/res/fonts/font_family.dart';
 
@@ -40,20 +41,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: '',
-        leading: SizedBox(
-          height: 48.h,
-          width: 48.w,
-          child: InkWell(
-            onTap: () {},
-            child: Icon(
-              Icons.keyboard_arrow_left,
-              color: context.appPrimaryColor,
-              size: 48.h,
-            ),
-          ),
-        ),
+      appBar: const NewCustomAppBar(
+        title: 'Reset Password',
       ),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.w),
@@ -61,18 +50,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: 30.h,
-              ),
-              Center(
-                child: TextWidget(
-                  text: Strings.resetPassword,
-                  textSize: 24.sp,
-                  fontWeight: FontWeight.w700,
-                  color: context.appPrimaryColor,
-                ),
-              ),
-              SizedBox(
-                height: 25.h,
+                height: 50.h,
               ),
               Center(
                 child: TextWidget(
@@ -116,7 +94,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   label: Strings.changePassword,
                   fontWeight: FontStyles.bold,
                   fontSize: 16.sp,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(
+                        context, ChangePasswordSuccessScreen.id);
+                  }),
             ],
           ),
         ),

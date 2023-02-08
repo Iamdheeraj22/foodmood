@@ -5,6 +5,8 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
+import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
+import 'package:foodmood/screens/onboarding/widgets/onbording_widget.dart';
 
 class LogoutScreenPage extends StatefulWidget {
   const LogoutScreenPage({Key? key}) : super(key: key);
@@ -64,7 +66,13 @@ class _LogoutScreenPageState extends State<LogoutScreenPage> {
               margin: EdgeInsets.symmetric(horizontal: 30.w),
               child: CustomButton(
                 label: 'Yes, Log me out',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OnBoardingScreen()),
+                      (route) => true);
+                },
                 color: context.appGreyColor2,
               ),
             ),
@@ -76,7 +84,9 @@ class _LogoutScreenPageState extends State<LogoutScreenPage> {
               margin: EdgeInsets.symmetric(horizontal: 30.w),
               child: CustomButton(
                 label: 'Nah! Just kidding',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 color: context.appPrimaryColor,
               ),
             ),

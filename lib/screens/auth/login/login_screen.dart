@@ -11,7 +11,11 @@ import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/app/services/navigator_service.dart';
+import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
+import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -43,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 50.h),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +127,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20.h,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, ForgetPasswordScreen.id);
+                },
                 child: TextWidget(
                   text: Strings.forgotPassword,
                   textSize: 14.sp,
@@ -173,15 +179,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   CircleIconButton(
                     icon: AppIcons.google,
-                    callback: () {},
+                    callback: () {
+                      showSnackBar('Under Development', context: context);
+                    },
                   ),
                   CircleIconButton(
                     icon: AppIcons.facebook,
-                    callback: () {},
+                    callback: () {
+                      showSnackBar('Under Development', context: context);
+                    },
                   ),
                   CircleIconButton(
                     icon: AppIcons.apple,
-                    callback: () {},
+                    callback: () {
+                      showSnackBar('Under Development', context: context);
+                    },
                   )
                 ],
               ),
@@ -200,7 +212,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: context.appPrimaryColor,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700),
-                    recognizer: TapGestureRecognizer()..onTap = () {},
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.pushNamed(context, SignUpScreen.id);
+                      },
                   )
                 ])),
               ),
