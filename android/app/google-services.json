@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460350405480",
+    "project_id": "foodmood-220fd",
+    "storage_bucket": "foodmood-220fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460350405480:android:f16d0eeca086ed6fdef4dd",
+        "android_client_info": {
+          "package_name": "com.unknowncoder.foodmood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460350405480-bmh1qrfuae4qgfj8orn601314q0i94go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM-CwJ9KfrVYsSkHxrTOM1nRUqFWahTY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460350405480-bmh1qrfuae4qgfj8orn601314q0i94go.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
