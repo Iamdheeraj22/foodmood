@@ -57,7 +57,9 @@ class NewCustomAppBar extends StatelessWidget with PreferredSizeWidget {
         padding: const EdgeInsets.all(5.0),
         child: InkWell(
           borderRadius: BorderRadius.circular(200),
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: SizedBox(
             height: 40.h,
             width: 40.h,

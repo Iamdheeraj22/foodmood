@@ -47,6 +47,9 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_rating_bar: ^4.0.1
 
+  #provider
+  provider:
+
   # Firebase dependency
   firebase_core:
   firebase_auth:
