@@ -6,7 +6,9 @@ import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/provider/auth_provider/reset_password_provider.dart';
 import 'package:foodmood/screens/auth/change_password_success_screen.dart';
+import 'package:provider/provider.dart';
 
 import '../../../app/res/fonts/font_family.dart';
 
@@ -22,6 +24,8 @@ class ResetPasswordScreen extends StatefulWidget {
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   TextEditingController _createController = TextEditingController();
   TextEditingController _confirmController = TextEditingController();
+
+  late ResetPasswordViewModel resetPasswordViewModel;
 
   final textFieldFocusNode = FocusNode();
   bool _obscured = false;
@@ -40,6 +44,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   bool isShow = false;
   @override
   Widget build(BuildContext context) {
+    resetPasswordViewModel = Provider.of<ResetPasswordViewModel>(context);
     return Scaffold(
       appBar: const NewCustomAppBar(
         title: 'Reset Password',
@@ -66,11 +71,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               CustomPasswordEditextText(
                   hintText: 'New Password',
-                  toggleObscured: toggleObscured,
+                  toggleObscured: () {
+                    resetPasswordViewModel.setNewPassword();
+                  },
                   prefixIcon: const Icon(Icons.lock),
                   controller: _createController,
                   title: 'New Password',
-                  isShow: _obscured,
+                  isShow: resetPasswordViewModel.getIsNPassword,
                   inputAction: TextInputAction.next,
                   inputType: TextInputType.number),
               SizedBox(
@@ -78,11 +85,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
               CustomPasswordEditextText(
                   hintText: 'Confirm Password',
-                  toggleObscured: toggleObscured,
+                  toggleObscured: () {
+                    resetPasswordViewModel.setNewConfirmPassword();
+                  },
                   prefixIcon: const Icon(Icons.lock),
                   controller: _confirmController,
                   title: 'Confrim Password',
-                  isShow: _obscured,
+                  isShow: resetPasswordViewModel.getIsNCPassword,
                   inputAction: TextInputAction.next,
                   inputType: TextInputType.number),
               SizedBox(
@@ -95,8 +104,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   fontWeight: FontStyles.bold,
                   fontSize: 16.sp,
                   onPressed: () {
-                    Navigator.pushNamed(
-                        context, ChangePasswordSuccessScreen.id);
+                    if (resetPasswordViewModel.checkValidation(
+                        _createController.text.toString(),
+                        _confirmController.text.toString(),
+                        context)) {
+                      Navigator.pushNamed(
+                          context, ChangePasswordSuccessScreen.id);
+                    }
                   }),
             ],
           ),
