@@ -6,6 +6,7 @@ import 'package:foodmood/app/res/styles/app_theme.dart';
 import 'package:foodmood/app/routes/custom_router.dart';
 import 'package:foodmood/firebase_options.dart';
 import 'package:foodmood/provider/auth_provider/login_provider.dart';
+import 'package:foodmood/provider/auth_provider/register_provider.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<LoginProviderModel>(
           create: (_) => LoginProviderModel(),
-        )
+        ),
+        ChangeNotifierProvider<RegisterViewModel>(
+            create: (_) => RegisterViewModel())
       ],
       child: MaterialApp(
           title: Strings.appName,

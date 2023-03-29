@@ -11,8 +11,10 @@ import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/provider/auth_provider/register_provider.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
+import 'package:provider/provider.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -24,11 +26,14 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _createPasswordController =
       TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
+
+  ///Provider
+  late RegisterViewModel registerViewModel;
 
   final textFieldFocusNode = FocusNode();
   bool _obscured = false;
@@ -46,6 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    registerViewModel = Provider.of<RegisterViewModel>(context);
     return Scaffold(
         appBar: const NewCustomAppBar(
           title: 'SignUp',
@@ -81,11 +87,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 20.h,
                 ),
                 CustomEditTextWithTitle(
-                  controller: _mobileController,
+                  controller: _usernameController,
                   inputAction: TextInputAction.next,
-                  hintText: 'Enter your name',
+                  hintText: 'Create new username',
                   inputType: TextInputType.text,
-                  title: 'Full Name',
+                  title: 'Username',
                   prefixIcon: const Icon(Icons.person),
                 ),
                 SizedBox(
@@ -95,8 +101,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Create new password',
                     controller: _createPasswordController,
                     title: 'Create password',
-                    toggleObscured: toggleObscured,
-                    isShow: _obscured,
+                    toggleObscured: () {
+                      registerViewModel.setCPassword();
+                    },
+                    isShow: registerViewModel.isShowCPassword,
                     prefixIcon: const Icon(Icons.lock),
                     inputAction: TextInputAction.next,
                     inputType: TextInputType.text),
@@ -105,10 +113,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 CustomPasswordEditextText(
                     hintText: 'Confirm your password',
-                    controller: _createPasswordController,
+                    controller: _confirmPasswordController,
                     title: 'Confirm password',
-                    isShow: _obscured,
-                    toggleObscured: toggleObscured,
+                    isShow: registerViewModel.isShowCCPassword,
+                    toggleObscured: () {
+                      registerViewModel.setCCPassword();
+                    },
                     prefixIcon: const Icon(Icons.lock),
                     inputAction: TextInputAction.done,
                     inputType: TextInputType.text),
@@ -121,7 +131,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     label: Strings.signUp,
                     fontWeight: FontStyles.bold,
                     fontSize: 16.sp,
-                    onPressed: () {}),
+                    onPressed: () {
+                      registerViewModel.checkValidation(
+                          _nameController.text.toString(),
+                          _emailController.text.toString(),
+                          _usernameController.text.toString(),
+                          _createPasswordController.text.toString(),
+                          _confirmPasswordController.text.toString(),
+                          context);
+                    }),
                 SizedBox(
                   height: 60.h,
                 ),
@@ -150,6 +168,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   height: 30.h,
                 ),
+                //Google , Facebook , apple
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [

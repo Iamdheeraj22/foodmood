@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/app/utils/utils.dart';
 
 class LoginProviderModel extends ChangeNotifier {
   bool isVisible = false;
@@ -17,17 +18,11 @@ class LoginProviderModel extends ChangeNotifier {
       return false;
     }
     //Check the email is valid or not
-    if (!emailValid(email.toString())) {
+    if (!Utils.emailValid(email.toString())) {
       showSnackBar('Please check your email', context: context);
       return false;
     }
 
     return true;
-  }
-
-  bool emailValid(email) {
-    return RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(email);
   }
 }
