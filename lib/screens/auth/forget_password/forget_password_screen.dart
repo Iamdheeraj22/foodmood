@@ -7,7 +7,9 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
+import 'package:foodmood/provider/auth_provider/forget_password_provider.dart';
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
+import 'package:provider/provider.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   ForgetPasswordScreen({Key? key}) : super(key: key);
@@ -18,9 +20,11 @@ class ForgetPasswordScreen extends StatefulWidget {
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
+  late ForgetPasswordViewModel providerModel;
 
   @override
   Widget build(BuildContext context) {
+    providerModel = Provider.of<ForgetPasswordViewModel>(context);
     return Scaffold(
       appBar: const NewCustomAppBar(
         title: Strings.forgotPassword2,
@@ -59,7 +63,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 fontWeight: FontStyles.bold,
                 fontSize: 16.sp,
                 onPressed: () {
-                  Navigator.pushNamed(context, OtpVerificationScreen.id);
+                  if (providerModel.checkValidation(
+                      _emailController.text.toString(), context)) {
+                    Navigator.pushNamed(context, OtpVerificationScreen.id);
+                  }
                 }),
           ],
         )),

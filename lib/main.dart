@@ -5,8 +5,10 @@ import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/res/styles/app_theme.dart';
 import 'package:foodmood/app/routes/custom_router.dart';
 import 'package:foodmood/firebase_options.dart';
+import 'package:foodmood/provider/auth_provider/forget_password_provider.dart';
 import 'package:foodmood/provider/auth_provider/login_provider.dart';
 import 'package:foodmood/provider/auth_provider/register_provider.dart';
+import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +30,9 @@ class MyApp extends StatelessWidget {
           create: (_) => LoginProviderModel(),
         ),
         ChangeNotifierProvider<RegisterViewModel>(
-            create: (_) => RegisterViewModel())
+            create: (_) => RegisterViewModel()),
+        ChangeNotifierProvider<ForgetPasswordViewModel>(
+            create: (_) => ForgetPasswordViewModel())
       ],
       child: MaterialApp(
           title: Strings.appName,
