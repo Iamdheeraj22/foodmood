@@ -7,11 +7,7 @@ import 'package:foodmood/app/routes/custom_router.dart';
 import 'package:foodmood/firebase_options.dart';
 import 'package:foodmood/provider/auth_provider/login_provider.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
-import 'package:foodmood/screens/food_brands/screens/food_brands_screen.dart';
-import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
 import 'package:provider/provider.dart';
-
-import 'screens/today_mood_dishes/screens/today_mood_dishes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<LoginProviderModel>(
+        ChangeNotifierProvider<LoginProviderModel>(
           create: (_) => LoginProviderModel(),
         )
       ],
@@ -37,8 +33,8 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.darkTheme(context),
           themeMode: appTheme.themeMode,
           onGenerateRoute: CustomRouter.generateRoute,
-          initialRoute: OnBoardingScreen.id,
-          home: OnBoardingScreen(),
+          initialRoute: LoginScreen.id,
+          home: LoginScreen(),
           builder: (context, child) {
             SizeConfig.initialize(
                 context: context, draftWidth: 428, draftHeight: 926);

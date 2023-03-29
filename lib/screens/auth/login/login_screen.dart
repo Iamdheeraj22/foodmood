@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/custom_button.dart';
@@ -13,10 +15,12 @@ import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/services/navigator_service.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/provider/auth_provider/login_provider.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/home/home_screen.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -29,9 +33,17 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  late LoginProviderModel loginProviderModel;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   final textFieldFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
+    loginProviderModel = Provider.of<LoginProviderModel>(context, listen: true);
     return Scaffold(
       body: SafeArea(
           child: Container(
@@ -75,11 +87,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _passwordController,
                 hintText: 'Enter password',
                 title: 'Password',
-                toggleObscured: () {},
+                toggleObscured: () {
+                  loginProviderModel.setPasswordVisibility(
+                      !loginProviderModel.isPasswordVisible);
+                  log(loginProviderModel.isPasswordVisible.toString());
+                },
                 inputType: TextInputType.visiblePassword,
                 prefixIcon: const Icon(Icons.lock),
                 inputAction: TextInputAction.done,
-                isShow: false,
+                isShow: loginProviderModel.isPasswordVisible,
               ),
               SizedBox(
                 height: 20.h,
@@ -107,7 +123,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontStyles.bold,
                   fontSize: 16.sp,
                   onPressed: () {
-                    Navigator.pushNamed(context, HomePageScreen.id);
+                    if (loginProviderModel.validation(
+                        _emailController.text.toString(),
+                        _passwordController.text.toString(),
+                        context)) {
+                      Navigator.pushNamed(context, HomePageScreen.id);
+                    }
                   }),
               SizedBox(
                 height: 60.h,

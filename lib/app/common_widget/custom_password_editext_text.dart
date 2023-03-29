@@ -4,8 +4,8 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
-class CustomPasswordEditextText extends StatefulWidget {
-  CustomPasswordEditextText(
+class CustomPasswordEditextText extends StatelessWidget {
+  const CustomPasswordEditextText(
       {Key? key,
       required this.hintText,
       this.prefixIcon,
@@ -27,18 +27,12 @@ class CustomPasswordEditextText extends StatefulWidget {
   final TextInputType inputType;
   final VoidCallback toggleObscured;
   @override
-  State<CustomPasswordEditextText> createState() =>
-      _CustomPasswordEditextTextState();
-}
-
-class _CustomPasswordEditextTextState extends State<CustomPasswordEditextText> {
-  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
-          text: widget.title,
+          text: title,
           color: context.appPrimaryColor,
           fontWeight: FontWeight.w700,
         ),
@@ -48,23 +42,23 @@ class _CustomPasswordEditextTextState extends State<CustomPasswordEditextText> {
         Container(
           decoration: BoxDecoration(color: context.appGreyColor2),
           child: TextFormField(
-              obscureText: !widget.isShow,
-              controller: widget.controller,
+              obscureText: isShow,
+              controller: controller,
               textAlignVertical: TextAlignVertical.center,
-              keyboardType: widget.inputType,
+              keyboardType: inputType,
               textInputAction: TextInputAction.done,
               style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
                   fontFamily: FontFamily.gilmerHeavy),
               decoration: InputDecoration(
-                  prefixIcon: widget.prefixIcon,
+                  prefixIcon: prefixIcon,
                   suffixIcon: Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      child: GestureDetector(
-                          onTap: widget.toggleObscured,
+                      child: InkWell(
+                          onTap: toggleObscured,
                           child: Icon(
-                            widget.isShow
+                            isShow
                                 ? Icons.visibility_rounded
                                 : Icons.visibility_off_rounded,
                             size: 24,
@@ -77,7 +71,7 @@ class _CustomPasswordEditextTextState extends State<CustomPasswordEditextText> {
                     horizontal: 10.w,
                   ),
                   border: InputBorder.none,
-                  hintText: widget.hintText)),
+                  hintText: hintText)),
         ),
       ],
     );

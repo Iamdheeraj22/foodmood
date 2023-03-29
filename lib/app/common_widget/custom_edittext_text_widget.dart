@@ -48,6 +48,8 @@ class _CustomEditTextWithTitleState extends State<CustomEditTextWithTitle> {
               controller: widget.controller,
               textAlignVertical: TextAlignVertical.center,
               textInputAction: widget.inputAction,
+              // validator: (input) =>
+              //     input!.isValidEmail() ? null : "Check your email",
               keyboardType: widget.inputType,
               style: TextStyle(
                   fontSize: 16.sp,
@@ -68,5 +70,13 @@ class _CustomEditTextWithTitleState extends State<CustomEditTextWithTitle> {
         ),
       ],
     );
+  }
+}
+
+extension EmailValidator on String {
+  bool isValidEmail() {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(this);
   }
 }
