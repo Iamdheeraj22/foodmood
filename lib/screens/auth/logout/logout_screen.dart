@@ -3,10 +3,8 @@ import 'package:foodmood/app/common_widget/custom_button.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
-import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_screen.dart';
-import 'package:foodmood/screens/onboarding/widgets/onbording_widget.dart';
 
 class LogoutScreenPage extends StatefulWidget {
   const LogoutScreenPage({Key? key}) : super(key: key);
@@ -70,7 +68,7 @@ class _LogoutScreenPageState extends State<LogoutScreenPage> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => OnBoardingScreen()),
+                          builder: (context) => const OnBoardingScreen()),
                       (route) => true);
                 },
                 color: context.appGreyColor2,

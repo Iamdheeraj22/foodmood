@@ -6,7 +6,7 @@ import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/screens/home/widgets/home_screen_widget.dart';
 
 class HomePageScreen extends StatefulWidget {
-  HomePageScreen({Key? key}) : super(key: key);
+  const HomePageScreen({Key? key}) : super(key: key);
   static const String id = '/home_page';
   @override
   State<HomePageScreen> createState() => _HomePageScreenState();

@@ -5,6 +5,8 @@ import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
 
 class PriceDetailsBottomsheet extends StatelessWidget {
+  const PriceDetailsBottomsheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

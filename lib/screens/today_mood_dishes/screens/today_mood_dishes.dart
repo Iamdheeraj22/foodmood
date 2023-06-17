@@ -3,9 +3,6 @@ import 'package:foodmood/app/common_widget/custom_appbar.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
-import 'package:foodmood/screens/food_brands/widgets/food_brand_card.dart';
-import 'package:foodmood/screens/home/widgets/dish_item_card.dart';
-import 'package:foodmood/screens/home/widgets/food_item_card.dart';
 import 'package:foodmood/screens/today_mood_dishes/widgets/custom_dish_card.dart';
 
 class TodayMoodDishes extends StatefulWidget {

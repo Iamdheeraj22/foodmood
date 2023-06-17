@@ -34,7 +34,7 @@ class _CartScreenState extends State<CartScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
-              children: [const CartItemCard(), const CartItemCard()],
+              children: const [CartItemCard(), CartItemCard()],
             ),
           ),
           Container(
@@ -62,7 +62,7 @@ class _CartScreenState extends State<CartScreen> {
                     showModalBottomSheet(
                         context: context,
                         builder: (builder) {
-                          return PriceDetailsBottomsheet();
+                          return const PriceDetailsBottomsheet();
                         });
                   },
                   child: SizedBox(

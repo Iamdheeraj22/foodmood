@@ -8,7 +8,7 @@ import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
 
 class OnBoardingCompleteScreen extends StatefulWidget {
-  OnBoardingCompleteScreen({Key? key}) : super(key: key);
+  const OnBoardingCompleteScreen({Key? key}) : super(key: key);
   static const String id = '/onboarding_complete';
   @override
   State<OnBoardingCompleteScreen> createState() =>

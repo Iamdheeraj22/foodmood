@@ -13,11 +13,10 @@ import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
 import 'package:foodmood/provider/auth_provider/register_provider.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
-import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
 import 'package:provider/provider.dart';
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({Key? key}) : super(key: key);
   static const String id = "/sign_up_screen";
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();

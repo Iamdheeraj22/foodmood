@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
-import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
 class PaymentItemCard extends StatelessWidget {

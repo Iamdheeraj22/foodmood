@@ -6,8 +6,8 @@ import 'package:foodmood/app/res/size/size_config.dart';
 class FoodBrandCard extends StatelessWidget {
   final String title;
   final String icon;
-  VoidCallback onTap;
-  FoodBrandCard({
+  final VoidCallback onTap;
+  const FoodBrandCard({
     Key? key,
     required this.title,
     required this.icon,

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
-import 'package:foodmood/app/res/drawables/images.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
-import 'package:foodmood/app/services/navigator_service.dart';
 import 'package:foodmood/screens/onboarding/screens/onboarding_complete.dart';
 import 'package:foodmood/screens/onboarding/widgets/onbording_widget.dart';
 
 class OnBoardingScreen extends StatefulWidget {
-  OnBoardingScreen({Key? key}) : super(key: key);
+  const OnBoardingScreen({Key? key}) : super(key: key);
   static const String id = "/onboarding_screen";
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
@@ -69,7 +67,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (builder) => OnBoardingCompleteScreen()));
+                            builder: (builder) => const OnBoardingCompleteScreen()));
                   },
                   child: TextWidget(
                     text: Strings.skip,

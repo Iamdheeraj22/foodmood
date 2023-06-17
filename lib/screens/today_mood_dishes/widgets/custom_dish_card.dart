@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodmood/app/common_widget/custom_button.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/food.dart';
@@ -7,7 +6,7 @@ import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 
 class CustomDishCard extends StatelessWidget {
-  CustomDishCard(
+  const CustomDishCard(
       {super.key,
       required this.image,
       required this.title,
@@ -97,7 +96,7 @@ class CustomDishCard extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Column(
             children: [
               TextWidget(

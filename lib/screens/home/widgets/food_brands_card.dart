@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodmood/app/common_widget/text_widget.dart';
-import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/food.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';

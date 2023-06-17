@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/custom_appbar.dart';
-import 'package:foodmood/app/common_widget/text_widget.dart';
-import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
 import 'package:foodmood/app/res/drawables/payments.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
@@ -9,7 +7,7 @@ import 'package:foodmood/screens/order_place_confirm/order_place_confirm.dart';
 import 'package:foodmood/screens/payment/widgets/payment_item_card.dart';
 
 class PaymentScreen extends StatefulWidget {
-  PaymentScreen({Key? key}) : super(key: key);
+  const PaymentScreen({Key? key}) : super(key: key);
   static const String id = '/payment_Screen';
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
@@ -19,7 +17,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NewCustomAppBar(title: 'Payment'),
+      appBar: const NewCustomAppBar(title: 'Payment'),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: SingleChildScrollView(

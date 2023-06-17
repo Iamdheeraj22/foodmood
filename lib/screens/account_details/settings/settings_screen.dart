@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodmood/app/common_widget/custom_appbar.dart';
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
@@ -86,7 +85,7 @@ class _SettingsScreenPaState extends State<SettingsScreenPage> {
                           fontWeight: FontWeight.w600,
                           textSize: 16.sp,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Switch(
                             value: isDark,
                             onChanged: (v) {

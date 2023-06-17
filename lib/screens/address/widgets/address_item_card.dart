@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
@@ -8,11 +7,12 @@ class AddressItemCard extends StatelessWidget {
   // final String typeName;
   // final String address;
   // final String icon;
-  VoidCallback onTap;
-  AddressItemCard({
+  const AddressItemCard({
     Key? key,
     required this.onTap,
   }) : super(key: key);
+  final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return Container(

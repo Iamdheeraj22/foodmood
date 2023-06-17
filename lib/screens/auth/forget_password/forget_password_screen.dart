@@ -8,11 +8,11 @@ import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/provider/auth_provider/forget_password_provider.dart';
-import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
+import 'package:foodmood/screens/auth/otp_verify/otp_verification_screen.dart';
 import 'package:provider/provider.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
-  ForgetPasswordScreen({Key? key}) : super(key: key);
+  const ForgetPasswordScreen({Key? key}) : super(key: key);
   static const String id = '/forget_password_screen';
   @override
   State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();

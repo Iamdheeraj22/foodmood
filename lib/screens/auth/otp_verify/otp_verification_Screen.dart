@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/custom_appbar.dart';
 import 'package:foodmood/app/common_widget/custom_button.dart';
-import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';

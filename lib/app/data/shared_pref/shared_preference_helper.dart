@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
 import 'package:foodmood/app/data/shared_pref/preferences.dart';
-import 'package:foodmood/app/services/navigator_service.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

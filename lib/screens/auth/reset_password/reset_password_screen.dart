@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 import '../../../app/res/fonts/font_family.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
-  ResetPasswordScreen({Key? key}) : super(key: key);
+  const ResetPasswordScreen({Key? key}) : super(key: key);
 
   static const String id = '/reset_password';
 
@@ -22,8 +22,8 @@ class ResetPasswordScreen extends StatefulWidget {
 }
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
-  TextEditingController _createController = TextEditingController();
-  TextEditingController _confirmController = TextEditingController();
+  final TextEditingController _createController = TextEditingController();
+  final TextEditingController _confirmController = TextEditingController();
 
   late ResetPasswordViewModel resetPasswordViewModel;
 

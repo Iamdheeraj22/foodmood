@@ -8,7 +8,7 @@ import 'package:foodmood/screens/auth/change_password_success_screen.dart';
 import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
 import 'package:foodmood/screens/auth/logout/logout_screen.dart';
-import 'package:foodmood/screens/auth/otp_verify/otp_verification_Screen.dart';
+import 'package:foodmood/screens/auth/otp_verify/otp_verification_screen.dart';
 import 'package:foodmood/screens/auth/register/screens/sign_up_screen.dart';
 import 'package:foodmood/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:foodmood/screens/cart/screens/cart_screen.dart';
@@ -26,25 +26,26 @@ class CustomRouter {
     switch (settings.name) {
       case OnBoardingScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => OnBoardingScreen());
+            settings: settings, builder: (_) => const OnBoardingScreen());
       case OnBoardingCompleteScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => OnBoardingCompleteScreen());
+            settings: settings,
+            builder: (_) => const OnBoardingCompleteScreen());
       case LoginScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const LoginScreen());
       case SignUpScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => SignUpScreen());
+            settings: settings, builder: (_) => const SignUpScreen());
       case ForgetPasswordScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => ForgetPasswordScreen());
+            settings: settings, builder: (_) => const ForgetPasswordScreen());
       case OtpVerificationScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const OtpVerificationScreen());
       case ResetPasswordScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => ResetPasswordScreen());
+            settings: settings, builder: (_) => const ResetPasswordScreen());
       case ChangePasswordSuccessScreen.id:
         return MaterialPageRoute(
             settings: settings,
@@ -57,7 +58,7 @@ class CustomRouter {
             settings: settings, builder: (_) => const SettingsScreenPage());
       case HomePageScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => HomePageScreen());
+            settings: settings, builder: (_) => const HomePageScreen());
       case PreviewScreenPage.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const PreviewScreenPage());
@@ -69,7 +70,7 @@ class CustomRouter {
             settings: settings, builder: (_) => const LogoutScreenPage());
       case PaymentScreen.id:
         return MaterialPageRoute(
-            settings: settings, builder: (_) => PaymentScreen());
+            settings: settings, builder: (_) => const PaymentScreen());
       case CartScreen.id:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const CartScreen());

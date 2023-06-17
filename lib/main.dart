@@ -9,7 +9,6 @@ import 'package:foodmood/provider/auth_provider/forget_password_provider.dart';
 import 'package:foodmood/provider/auth_provider/login_provider.dart';
 import 'package:foodmood/provider/auth_provider/register_provider.dart';
 import 'package:foodmood/provider/auth_provider/reset_password_provider.dart';
-import 'package:foodmood/screens/auth/forget_password/forget_password_screen.dart';
 import 'package:foodmood/screens/auth/login/login_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
           themeMode: appTheme.themeMode,
           onGenerateRoute: CustomRouter.generateRoute,
           initialRoute: LoginScreen.id,
-          home: LoginScreen(),
+          home: const LoginScreen(),
           builder: (context, child) {
             SizeConfig.initialize(
                 context: context, draftWidth: 428, draftHeight: 926);

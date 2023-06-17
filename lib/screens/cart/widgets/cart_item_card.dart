@@ -74,7 +74,7 @@ class CartItemCard extends StatelessWidget {
                       SizedBox(
                         width: 15.w,
                       ),
-                      TextWidget(text: '1'),
+                      const TextWidget(text: '1'),
                       SizedBox(
                         width: 15.w,
                       ),
