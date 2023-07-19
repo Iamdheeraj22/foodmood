@@ -15,6 +15,7 @@ class CustomPasswordEditextText extends StatelessWidget {
       required this.isShow,
       required this.inputAction,
       required this.inputType,
+      required this.validator,
       required this.toggleObscured})
       : super(key: key);
   final String hintText;
@@ -24,6 +25,7 @@ class CustomPasswordEditextText extends StatelessWidget {
   final String title;
   final TextInputAction inputAction;
   final bool isShow;
+  final String? Function(String?) validator;
   final TextInputType inputType;
   final VoidCallback toggleObscured;
   @override
@@ -39,40 +41,38 @@ class CustomPasswordEditextText extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        Container(
-          decoration: BoxDecoration(color: context.appGreyColor2),
-          child: TextFormField(
-              obscureText: isShow,
-              controller: controller,
-              textAlignVertical: TextAlignVertical.center,
-              keyboardType: inputType,
-              textInputAction: TextInputAction.done,
-              style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: FontFamily.gilmerHeavy),
-              decoration: InputDecoration(
-                  prefixIcon: prefixIcon,
-                  suffixIcon: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      child: InkWell(
-                          onTap: toggleObscured,
-                          child: Icon(
-                            isShow
-                                ? Icons.visibility_rounded
-                                : Icons.visibility_off_rounded,
-                            size: 24,
-                          ))),
-                  hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: FontFamily.gilmerHeavy),
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                  ),
-                  border: InputBorder.none,
-                  hintText: hintText)),
-        ),
+        TextFormField(
+            obscureText: isShow,
+            controller: controller,
+            validator: validator,
+            textAlignVertical: TextAlignVertical.center,
+            keyboardType: inputType,
+            textInputAction: TextInputAction.done,
+            style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: FontFamily.gilmerHeavy),
+            decoration: InputDecoration(
+                prefixIcon: prefixIcon,
+                suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
+                    child: InkWell(
+                        onTap: toggleObscured,
+                        child: Icon(
+                          isShow
+                              ? Icons.visibility_rounded
+                              : Icons.visibility_off_rounded,
+                          size: 24,
+                        ))),
+                hintStyle: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: FontFamily.gilmerHeavy),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                ),
+                border: InputBorder.none,
+                hintText: hintText)),
       ],
     );
   }

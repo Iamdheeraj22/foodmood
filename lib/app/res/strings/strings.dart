@@ -1,6 +1,6 @@
 //This class is used for app strings.xml
-class Strings {
-  Strings._();
+class AppStrings {
+  AppStrings._();
 
   /*-------------------General Strings-------------------*/
   static const String appName = 'Food Mood';
@@ -170,4 +170,10 @@ class Strings {
 
   static const String addresses = 'Addresses';
   static const String restarant = 'Restarants';
+  static const String k = 'variableValue';
+
+  static const String kUnderDevelopement = 'Under Developement';
+  static const String kSignUpLine1 = 'Or Sign up with';
+  static const String kCreateNewPassword = 'Create new password';
+  static const String kEnterYourEmail = 'Enter your email';
 }

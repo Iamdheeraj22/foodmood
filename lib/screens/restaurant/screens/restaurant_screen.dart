@@ -20,7 +20,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
     return Scaffold(
       appBar: AppBar(
         title: TextWidget(
-          text: Strings.restarant,
+          text: AppStrings.restarant,
           textSize: 20.sp,
           fontWeight: FontWeight.w600,
           color: context.appPrimaryColor,

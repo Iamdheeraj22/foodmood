@@ -146,31 +146,31 @@ class FoodModel {
 
 List<FoodModel> foodTodayList = [
   FoodModel(
-      title: Strings.biryani,
+      title: AppStrings.biryani,
       imagePath: FoodStrings.biryani,
       distance: '5 km',
       price: '150',
       time: '30 Minutes'),
   FoodModel(
-      title: Strings.pijja,
+      title: AppStrings.pijja,
       imagePath: FoodStrings.pijja,
       distance: '5 km',
       price: '150',
       time: '30 Minutes'),
   FoodModel(
-      title: Strings.samosa,
+      title: AppStrings.samosa,
       imagePath: FoodStrings.samosa,
       distance: '5 km',
       price: '150',
       time: '30 Minutes'),
   FoodModel(
-      title: Strings.paneer,
+      title: AppStrings.paneer,
       imagePath: FoodStrings.paneer,
       distance: '5 km',
       price: '150',
       time: '30 Minutes'),
   FoodModel(
-      title: Strings.thali,
+      title: AppStrings.thali,
       imagePath: FoodStrings.thali,
       distance: '5 km',
       price: '150',

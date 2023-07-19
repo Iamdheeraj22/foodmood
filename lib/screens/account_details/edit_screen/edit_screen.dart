@@ -82,8 +82,8 @@ class _EditScreenPageState extends State<EditScreenPage> {
                 height: 50.h,
               ),
               CustomEditTextWidget(
-                title: Strings.name,
-                hintText: Strings.enterName,
+                title: AppStrings.name,
+                hintText: AppStrings.enterName,
                 controller: _nameController,
                 inputAction: TextInputAction.next,
                 inputType: TextInputType.text,
@@ -96,8 +96,8 @@ class _EditScreenPageState extends State<EditScreenPage> {
               CustomEditTextWidget(
                 update: () {},
                 cancel: () {},
-                title: Strings.phoneNumber,
-                hintText: Strings.enterPhoneNumber,
+                title: AppStrings.phoneNumber,
+                hintText: AppStrings.enterPhoneNumber,
                 controller: _phoneController,
                 inputAction: TextInputAction.next,
                 inputType: TextInputType.phone,
@@ -108,8 +108,8 @@ class _EditScreenPageState extends State<EditScreenPage> {
               CustomEditTextWidget(
                 update: () {},
                 cancel: () {},
-                title: Strings.email,
-                hintText: Strings.enterEmailHint,
+                title: AppStrings.email,
+                hintText: AppStrings.enterEmailHint,
                 controller: _emailController,
                 inputAction: TextInputAction.done,
                 inputType: TextInputType.emailAddress,

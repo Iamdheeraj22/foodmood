@@ -28,7 +28,7 @@ class _SettingsScreenPaState extends State<SettingsScreenPage> {
           ),
         ),
         title: TextWidget(
-          text: Strings.settings,
+          text: AppStrings.settings,
           color: context.appPrimaryColor,
           fontWeight: FontWeight.w500,
           textSize: 20.sp,
@@ -43,14 +43,14 @@ class _SettingsScreenPaState extends State<SettingsScreenPage> {
               height: 25.h,
             ),
             OptionItemCard(
-                title: Strings.helpSupport,
+                title: AppStrings.helpSupport,
                 onPressed: () {},
                 itemICon: AppIcons.helpCircle),
             SizedBox(
               height: 15.h,
             ),
             OptionItemCard(
-                title: Strings.feedback,
+                title: AppStrings.feedback,
                 onPressed: () {},
                 itemICon: AppIcons.feedback),
             SizedBox(
@@ -101,7 +101,7 @@ class _SettingsScreenPaState extends State<SettingsScreenPage> {
               height: 15.h,
             ),
             OptionItemCard(
-                title: Strings.about,
+                title: AppStrings.about,
                 onPressed: () {},
                 itemICon: AppIcons.info),
             SizedBox(

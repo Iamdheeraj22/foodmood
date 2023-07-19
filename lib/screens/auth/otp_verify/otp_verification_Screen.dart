@@ -33,7 +33,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           RichText(
               text: TextSpan(children: [
             TextSpan(
-                text: Strings.enterOTPDesc,
+                text: AppStrings.enterOTPDesc,
                 style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
@@ -81,7 +81,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             child: CustomButton(
                 height: 60.h,
                 color: ColorsCollections.appPrimaryColor,
-                label: Strings.verify,
+                label: AppStrings.verify,
                 fontWeight: FontStyles.bold,
                 fontSize: 16.sp,
                 onPressed: () {

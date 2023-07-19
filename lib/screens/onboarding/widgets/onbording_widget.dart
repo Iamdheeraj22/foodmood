@@ -53,15 +53,15 @@ class OnBoardingWidget extends StatelessWidget {
 
 final List<Widget> pages = [
   const OnBoardingWidget(
-      title: Strings.onboardingTitle1,
-      desc: Strings.onboardingDesc1,
+      title: AppStrings.onboardingTitle1,
+      desc: AppStrings.onboardingDesc1,
       image: Images.chef),
   const OnBoardingWidget(
-      title: Strings.onboardingTitle2,
-      desc: Strings.onboardingDesc2,
+      title: AppStrings.onboardingTitle2,
+      desc: AppStrings.onboardingDesc2,
       image: Images.coffeeShop),
   const OnBoardingWidget(
-      title: Strings.onboardingTitle3,
-      desc: Strings.onboardingDesc3,
+      title: AppStrings.onboardingTitle3,
+      desc: AppStrings.onboardingDesc3,
       image: Images.takeaway),
 ];

@@ -40,7 +40,7 @@ class _ChangePasswordSuccessScreenState
           ),
           Center(
             child: TextWidget(
-              text: Strings.success,
+              text: AppStrings.success,
               textSize: 24.sp,
               fontWeight: FontWeight.w700,
               color: context.appPrimaryColor,
@@ -50,7 +50,7 @@ class _ChangePasswordSuccessScreenState
             height: 20.h,
           ),
           TextWidget(
-            text: Strings.successDesc1,
+            text: AppStrings.successDesc1,
             textSize: 16.sp,
             fontWeight: FontWeight.w600,
             color: context.appOnbordingColor,
@@ -59,7 +59,7 @@ class _ChangePasswordSuccessScreenState
             height: 5.h,
           ),
           TextWidget(
-            text: Strings.successDesc2,
+            text: AppStrings.successDesc2,
             textSize: 16.sp,
             fontWeight: FontWeight.w600,
             color: context.appOnbordingColor,
@@ -70,13 +70,14 @@ class _ChangePasswordSuccessScreenState
           CustomButton(
               height: 60.h,
               color: ColorsCollections.appPrimaryColor,
-              label: Strings.goMoody,
+              label: AppStrings.goMoody,
               fontWeight: FontStyles.bold,
               fontSize: 16.sp,
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const OnBoardingScreen()),
                     (route) => false);
               }),
         ],

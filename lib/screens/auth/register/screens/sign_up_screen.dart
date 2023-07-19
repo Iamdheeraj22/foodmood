@@ -11,6 +11,7 @@ import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
 import 'package:foodmood/app/utils/snack_bar.dart';
+import 'package:foodmood/app/utils/validator.dart';
 import 'package:foodmood/provider/auth_provider/register_provider.dart';
 import 'package:foodmood/screens/auth/login/widgets/login_widgets.dart';
 import 'package:provider/provider.dart';
@@ -31,195 +32,211 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-  ///Provider
-  late RegisterViewModel registerViewModel;
-
-  final textFieldFocusNode = FocusNode();
-  bool _obscured = false;
-
-  void toggleObscured() {
-    setState(() {
-      _obscured = !_obscured;
-      if (textFieldFocusNode.hasPrimaryFocus) {
-        return;
-      } // If focus is on text field, dont unfocus
-      textFieldFocusNode.canRequestFocus =
-          false; // Prevents focus if tap on eye
-    });
-  }
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    registerViewModel = Provider.of<RegisterViewModel>(context);
     return Scaffold(
         appBar: const NewCustomAppBar(
           title: 'SignUp',
         ),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20.h,
-                ),
-                CustomEditTextWithTitle(
-                  controller: _nameController,
-                  inputAction: TextInputAction.next,
-                  hintText: 'Enter your name',
-                  inputType: TextInputType.text,
-                  title: 'Full Name',
-                  prefixIcon: const Icon(Icons.person),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                CustomEditTextWithTitle(
-                  controller: _emailController,
-                  inputAction: TextInputAction.next,
-                  hintText: 'Enter email address',
-                  inputType: TextInputType.text,
-                  title: 'Email address',
-                  prefixIcon: const Icon(Icons.email),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                CustomEditTextWithTitle(
-                  controller: _usernameController,
-                  inputAction: TextInputAction.next,
-                  hintText: 'Create new username',
-                  inputType: TextInputType.text,
-                  title: 'Username',
-                  prefixIcon: const Icon(Icons.person),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                CustomPasswordEditextText(
-                    hintText: 'Create new password',
-                    controller: _createPasswordController,
-                    title: 'Create password',
-                    toggleObscured: () {
-                      registerViewModel.setCPassword();
-                    },
-                    isShow: registerViewModel.isShowCPassword,
-                    prefixIcon: const Icon(Icons.lock),
-                    inputAction: TextInputAction.next,
-                    inputType: TextInputType.text),
-                SizedBox(
-                  height: 20.h,
-                ),
-                CustomPasswordEditextText(
-                    hintText: 'Confirm your password',
-                    controller: _confirmPasswordController,
-                    title: 'Confirm password',
-                    isShow: registerViewModel.isShowCCPassword,
-                    toggleObscured: () {
-                      registerViewModel.setCCPassword();
-                    },
-                    prefixIcon: const Icon(Icons.lock),
-                    inputAction: TextInputAction.done,
-                    inputType: TextInputType.text),
-                SizedBox(
-                  height: 40.h,
-                ),
-                CustomButton(
-                    height: 60.h,
-                    color: ColorsCollections.appPrimaryColor,
-                    label: Strings.signUp,
-                    fontWeight: FontStyles.bold,
-                    fontSize: 16.sp,
-                    onPressed: () {
-                      registerViewModel.checkValidation(
-                          _nameController.text.toString(),
-                          _emailController.text.toString(),
-                          _usernameController.text.toString(),
-                          _createPasswordController.text.toString(),
-                          _confirmPasswordController.text.toString(),
-                          context);
-                    }),
-                SizedBox(
-                  height: 60.h,
-                ),
-                Row(
+          child: SingleChildScrollView(child: Consumer<RegisterViewModel>(
+            builder: (context, registerViewModel, child) {
+              return Form(
+                key: _formKey,
+                child: Column(
                   children: [
-                    Container(
-                      color: context.black,
-                      height: 1.h,
-                      width: 123.w,
+                    SizedBox(
+                      height: 20.h,
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: TextWidget(
-                        text: 'Or Sign up with',
-                        fontWeight: FontWeight.w600,
-                        textSize: 14.sp,
-                      ),
-                    ),
-                    Container(
-                      color: context.black,
-                      height: 1.h,
-                      width: 123.w,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                //Google , Facebook , apple
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CircleIconButton(
-                      icon: AppIcons.google,
-                      callback: () {
-                        showSnackBar('Under Development', context: context);
+                    CustomEditTextWithTitle(
+                      controller: _nameController,
+                      inputAction: TextInputAction.next,
+                      hintText: 'Enter your name',
+                      inputType: TextInputType.text,
+                      title: 'Full Name',
+                      prefixIcon: const Icon(Icons.person),
+                      validator: (value) {
+                        if (value != null) {
+                          if (value.isEmpty) {
+                            return 'Please enter your name';
+                          }
+                          if (value.length < 6) {
+                            return 'Please enter valid name';
+                          }
+                        }
                       },
                     ),
-                    CircleIconButton(
-                      icon: AppIcons.facebook,
-                      callback: () {
-                        showSnackBar('Under Development', context: context);
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    CustomEditTextWithTitle(
+                      controller: _emailController,
+                      inputAction: TextInputAction.next,
+                      hintText: AppStrings.kEnterYourEmail,
+                      inputType: TextInputType.text,
+                      title:AppStrings.email,
+                      prefixIcon: const Icon(Icons.email),
+                      validator: (value) {
+                        return Validator.validateEmail(value!);
                       },
                     ),
-                    CircleIconButton(
-                      icon: AppIcons.apple,
-                      callback: () {
-                        showSnackBar('Under Development', context: context);
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    CustomEditTextWithTitle(
+                      controller: _usernameController,
+                      inputAction: TextInputAction.next,
+                      hintText: 'Create new username',
+                      inputType: TextInputType.text,
+                      title: 'Username',
+                      prefixIcon: const Icon(Icons.person),
+                      validator: (value) {
+                        if (value != null) {
+                          if (value.isEmpty) {
+                            return 'Please enter your username';
+                          }
+                          if (value.length < 6) {
+                            return 'Please enter valid username';
+                          }
+                        }
                       },
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 50.h,
-                ),
-                Center(
-                  child: RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: Strings.alreadyAccount,
-                        style:
-                            TextStyle(color: context.black, fontSize: 14.sp)),
-                    TextSpan(
-                      text: Strings.login,
-                      style: TextStyle(
-                          color: context.appPrimaryColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.pop(context);
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    CustomPasswordEditextText(
+                      hintText: AppStrings.kCreateNewPassword,
+                      controller: _createPasswordController,
+                      title: AppStrings.kCreateNewPassword,
+                      toggleObscured: () {
+                        registerViewModel.setCPassword();
+                      },
+                      isShow: registerViewModel.isShowCPassword,
+                      prefixIcon: const Icon(Icons.lock),
+                      inputAction: TextInputAction.next,
+                      inputType: TextInputType.text,
+                      validator: (p0) {
+                        return Validator.passwordValidator(p0!);
+                      },
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    CustomPasswordEditextText(
+                        hintText: AppStrings.confirmPassword,
+                        controller: _confirmPasswordController,
+                        title: AppStrings.confirmPassword,
+                        isShow: registerViewModel.isShowCCPassword,
+                        toggleObscured: () {
+                          registerViewModel.setCCPassword();
                         },
-                    )
-                  ])),
+                        validator: (p0) {
+                          return Validator.passwordValidator(p0!);
+                        },
+                        prefixIcon: const Icon(Icons.lock),
+                        inputAction: TextInputAction.done,
+                        inputType: TextInputType.text),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    CustomButton(
+                        height: 60.h,
+                        color: ColorsCollections.appPrimaryColor,
+                        label: AppStrings.signUp,
+                        fontWeight: FontStyles.bold,
+                        fontSize: 16.sp,
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {}
+                        }),
+                    SizedBox(
+                      height: 60.h,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          color: context.black,
+                          height: 1.h,
+                          width: 123.w,
+                        ),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: TextWidget(
+                            text: AppStrings.kSignUpLine1,
+                            fontWeight: FontWeight.w600,
+                            textSize: 14.sp,
+                          ),
+                        ),
+                        Container(
+                          color: context.black,
+                          height: 1.h,
+                          width: 123.w,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    //Google , Facebook , apple
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CircleIconButton(
+                          icon: AppIcons.google,
+                          callback: () {
+                            showSnackBar(AppStrings.kUnderDevelopement,
+                                context: context);
+                          },
+                        ),
+                        CircleIconButton(
+                          icon: AppIcons.facebook,
+                          callback: () {
+                            showSnackBar(AppStrings.kUnderDevelopement,
+                                context: context);
+                          },
+                        ),
+                        CircleIconButton(
+                          icon: AppIcons.apple,
+                          callback: () {
+                            showSnackBar(AppStrings.kUnderDevelopement,
+                                context: context);
+                          },
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 50.h,
+                    ),
+                    Center(
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: AppStrings.alreadyAccount,
+                            style: TextStyle(
+                                color: context.black, fontSize: 14.sp)),
+                        TextSpan(
+                          text: AppStrings.login,
+                          style: TextStyle(
+                              color: context.appPrimaryColor,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w700),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pop(context);
+                            },
+                        )
+                      ])),
+                    ),
+                    SizedBox(
+                      height: 50.h,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 50.h,
-                ),
-              ],
-            ),
-          ),
+              );
+            },
+          )),
         ));
   }
 }

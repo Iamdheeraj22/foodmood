@@ -28,7 +28,7 @@ class _PreviewScreenPageState extends State<PreviewScreenPage> {
               size: 30.h,
             )),
         title: TextWidget(
-          text: Strings.preview,
+          text: AppStrings.preview,
           textSize: 24.sp,
           fontWeight: FontWeight.w400,
           color: context.appPrimaryColor,

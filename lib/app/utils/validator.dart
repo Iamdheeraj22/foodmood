@@ -92,6 +92,26 @@ class Validator {
       if (value.isEmpty) {
         return 'Password cannot be empty';
       }
+      if (value.length < 6) {
+        return 'Password must be at least 6 characters';
+      }
+    } else {
+      return 'Password cannot be empty';
+    }
+    return null;
+  }
+
+  static String? confirmPasswordValidator(String? p1, String? p2) {
+    if (p1 != null && p2 != null) {
+      if (p1.isEmpty) {
+        return 'Password cannot be empty';
+      }
+      if (p1.length < 6) {
+        return 'Password must be at least 6 characters';
+      }
+      if (p1 != p2) {
+        return 'Password do not match';
+      }
     } else {
       return 'Password cannot be empty';
     }

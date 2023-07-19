@@ -60,9 +60,9 @@ class FoodItemModel {
 }
 
 List<FoodItemModel> foodList = [
-  FoodItemModel(title: Strings.biryani, imagePath: FoodStrings.biryani),
-  FoodItemModel(title: Strings.pijja, imagePath: FoodStrings.pijja),
-  FoodItemModel(title: Strings.samosa, imagePath: FoodStrings.samosa),
-  FoodItemModel(title: Strings.paneer, imagePath: FoodStrings.paneer),
-  FoodItemModel(title: Strings.thali, imagePath: FoodStrings.thali),
+  FoodItemModel(title: AppStrings.biryani, imagePath: FoodStrings.biryani),
+  FoodItemModel(title: AppStrings.pijja, imagePath: FoodStrings.pijja),
+  FoodItemModel(title: AppStrings.samosa, imagePath: FoodStrings.samosa),
+  FoodItemModel(title: AppStrings.paneer, imagePath: FoodStrings.paneer),
+  FoodItemModel(title: AppStrings.thali, imagePath: FoodStrings.thali),
 ];

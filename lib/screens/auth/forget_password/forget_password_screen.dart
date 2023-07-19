@@ -7,7 +7,8 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 import 'package:foodmood/app/res/strings/strings.dart';
-import 'package:foodmood/provider/auth_provider/forget_password_provider.dart';
+import 'package:foodmood/app/utils/validator.dart';
+
 import 'package:foodmood/screens/auth/otp_verify/otp_verification_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -20,14 +21,13 @@ class ForgetPasswordScreen extends StatefulWidget {
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
-  late ForgetPasswordViewModel providerModel;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    providerModel = Provider.of<ForgetPasswordViewModel>(context);
     return Scaffold(
       appBar: const NewCustomAppBar(
-        title: Strings.forgotPassword2,
+        title: AppStrings.forgotPassword2,
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -38,7 +38,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               height: 20.h,
             ),
             TextWidget(
-              text: Strings.forgotPasswordDesc,
+              text: AppStrings.forgotPasswordDesc,
               textSize: 16.sp,
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.center,
@@ -46,25 +46,30 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             SizedBox(
               height: 100.h,
             ),
-            CustomEditTextWithTitle(
-                hintText: 'Ente your Email ID / Mobile number',
-                controller: _emailController,
-                title: 'Email address',
-                inputAction: TextInputAction.done,
-                prefixIcon: const Icon(Icons.email),
-                inputType: TextInputType.text),
+            Form(
+              key: _formKey,
+              child: CustomEditTextWithTitle(
+                  hintText: 'Ente your Email ID / Mobile number',
+                  controller: _emailController,
+                  title: 'Email address',
+                  inputAction: TextInputAction.done,
+                  prefixIcon: const Icon(Icons.email),
+                  validator: (value) {
+                    return Validator.validateEmail(value!);
+                  },
+                  inputType: TextInputType.text),
+            ),
             SizedBox(
               height: 20.h,
             ),
             CustomButton(
                 height: 60.h,
                 color: ColorsCollections.appPrimaryColor,
-                label: Strings.submit,
+                label: AppStrings.submit,
                 fontWeight: FontStyles.bold,
                 fontSize: 16.sp,
                 onPressed: () {
-                  if (providerModel.checkValidation(
-                      _emailController.text.toString(), context)) {
+                  if (_formKey.currentState!.validate()) {
                     Navigator.pushNamed(context, OtpVerificationScreen.id);
                   }
                 }),

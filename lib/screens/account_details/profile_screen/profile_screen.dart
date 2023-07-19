@@ -23,7 +23,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: TextWidget(
-          text: Strings.profile,
+          text: AppStrings.profile,
           fontWeight: FontWeight.w700,
           color: context.appPrimaryColor,
           textSize: 24.sp,
@@ -116,35 +116,35 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                 height: 20.h,
               ),
               OptionItemCard(
-                  title: Strings.orderHistory,
+                  title: AppStrings.orderHistory,
                   onPressed: () {},
                   itemICon: AppIcons.shoppingBag),
               SizedBox(
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.trackOrder,
+                  title: AppStrings.trackOrder,
                   onPressed: () {},
                   itemICon: AppIcons.truck),
               SizedBox(
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.transactions,
+                  title: AppStrings.transactions,
                   onPressed: () {},
                   itemICon: AppIcons.creditCard),
               SizedBox(
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.settings,
+                  title: AppStrings.settings,
                   onPressed: () {},
                   itemICon: AppIcons.accountSetting),
               SizedBox(
                 height: 15.h,
               ),
               OptionItemCard(
-                  title: Strings.logout,
+                  title: AppStrings.logout,
                   onPressed: () {},
                   itemICon: AppIcons.logout),
             ],

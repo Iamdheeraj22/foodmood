@@ -5,16 +5,17 @@ import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
 class CustomEditTextWithTitle extends StatefulWidget {
-  const CustomEditTextWithTitle(
-      {Key? key,
-      required this.hintText,
-      this.prefixIcon,
-      this.suffixIcon,
-      required this.controller,
-      required this.title,
-      required this.inputAction,
-      required this.inputType})
-      : super(key: key);
+  const CustomEditTextWithTitle({
+    Key? key,
+    required this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+    required this.controller,
+    required this.title,
+    required this.inputAction,
+    required this.inputType,
+    required this.validator,
+  }) : super(key: key);
   final String hintText;
   final Icon? prefixIcon;
   final Icon? suffixIcon;
@@ -22,6 +23,7 @@ class CustomEditTextWithTitle extends StatefulWidget {
   final String title;
   final TextInputAction inputAction;
   final TextInputType inputType;
+  final String? Function(String?) validator;
 
   @override
   State<CustomEditTextWithTitle> createState() =>
@@ -42,32 +44,44 @@ class _CustomEditTextWithTitleState extends State<CustomEditTextWithTitle> {
         SizedBox(
           height: 10.h,
         ),
-        Container(
-          decoration: BoxDecoration(color: context.appGreyColor2),
-          child: TextFormField(
-              controller: widget.controller,
-              textAlignVertical: TextAlignVertical.center,
-              textInputAction: widget.inputAction,
-              // validator: (input) =>
-              //     input!.isValidEmail() ? null : "Check your email",
-              keyboardType: widget.inputType,
-              style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: FontFamily.gilmerHeavy),
-              decoration: InputDecoration(
-                  prefixIcon: widget.prefixIcon,
-                  suffixIcon: widget.suffixIcon,
-                  hintStyle: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: FontFamily.gilmerHeavy),
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                  ),
-                  border: InputBorder.none,
-                  hintText: widget.hintText)),
-        ),
+        TextFormField(
+            controller: widget.controller,
+            textAlignVertical: TextAlignVertical.center,
+            textInputAction: widget.inputAction,
+            validator: widget.validator,
+            keyboardType: widget.inputType,
+            style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: FontFamily.gilmerHeavy),
+            decoration: InputDecoration(
+                prefixIcon: widget.prefixIcon,
+                suffixIcon: widget.suffixIcon,
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide(color: context.appGreyColor1),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide(color: context.appPrimaryColor),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: const BorderSide(color: Colors.red),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: const BorderSide(color: Colors.red),
+                ),
+                hintStyle: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: FontFamily.gilmerHeavy),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                ),
+                border: InputBorder.none,
+                hintText: widget.hintText)),
       ],
     );
   }

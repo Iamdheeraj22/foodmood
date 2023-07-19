@@ -60,7 +60,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Center(
                 child: TextWidget(
                   textAlign: TextAlign.center,
-                  text: Strings.resetPasswordDesc,
+                  text: AppStrings.resetPasswordDesc,
                   textSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: context.appOnbordingColor,
@@ -78,6 +78,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   controller: _createController,
                   title: 'New Password',
                   isShow: resetPasswordViewModel.getIsNPassword,
+                  validator: (p0) {},
                   inputAction: TextInputAction.next,
                   inputType: TextInputType.number),
               SizedBox(
@@ -93,6 +94,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   title: 'Confrim Password',
                   isShow: resetPasswordViewModel.getIsNCPassword,
                   inputAction: TextInputAction.next,
+                  validator: (p0) {},
                   inputType: TextInputType.number),
               SizedBox(
                 height: 20.h,
@@ -100,7 +102,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               CustomButton(
                   height: 60.h,
                   color: ColorsCollections.appPrimaryColor,
-                  label: Strings.changePassword,
+                  label: AppStrings.changePassword,
                   fontWeight: FontStyles.bold,
                   fontSize: 16.sp,
                   onPressed: () {

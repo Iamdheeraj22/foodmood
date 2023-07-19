@@ -67,10 +67,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (builder) => const OnBoardingCompleteScreen()));
+                            builder: (builder) =>
+                                const OnBoardingCompleteScreen()));
                   },
                   child: TextWidget(
-                    text: Strings.skip,
+                    text: AppStrings.skip,
                     textSize: 14.sp,
                     color: ColorsCollections.appPrimaryColor,
                   ),

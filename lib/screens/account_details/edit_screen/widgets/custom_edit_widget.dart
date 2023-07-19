@@ -93,7 +93,7 @@ class CustomEditTextWidget extends StatelessWidget {
                           child: TextWidget(
                             color: context.white,
                             fontWeight: FontStyles.bold,
-                            text: Strings.update.toUpperCase(),
+                            text: AppStrings.update.toUpperCase(),
                           ),
                         ),
                       ),
@@ -116,7 +116,7 @@ class CustomEditTextWidget extends StatelessWidget {
                                   color: context.appPrimaryColor, width: 1)),
                           height: 50.h,
                           child: TextWidget(
-                            text: Strings.cancel.toUpperCase(),
+                            text: AppStrings.cancel.toUpperCase(),
                             fontWeight: FontStyles.bold,
                           ),
                         ),

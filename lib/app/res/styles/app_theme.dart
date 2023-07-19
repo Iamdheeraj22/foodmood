@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
+import 'package:foodmood/app/res/size/size_config.dart';
 
 class AppTheme with ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.system;
@@ -19,11 +20,30 @@ class AppTheme with ChangeNotifier {
       brightness: Brightness.light,
       scaffoldBackgroundColor: Colors.white,
       hintColor: Colors.grey,
+
       /*iconTheme:
           Theme.of(context).iconTheme.copyWith(color: AppColors.colorAccent),*/
-      inputDecorationTheme: const InputDecorationTheme(
-          //hintStyle: TextStyle(color: AppColors.colorSecondary),
-          ),
+      inputDecorationTheme: InputDecorationTheme(
+        //hintStyle: TextStyle(color: AppColors.colorSecondary),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.r),
+          borderSide: BorderSide(color: context.appGreyColor1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.r),
+          borderSide: BorderSide(color: context.appPrimaryColor),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.r),
+          borderSide: const BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.r),
+          borderSide: const BorderSide(color: Colors.red),
+        ),
+        errorStyle: const TextStyle(color: ColorsCollections.appPrimaryColor),
+      ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
               //  primary: AppColors.colorPrimary,

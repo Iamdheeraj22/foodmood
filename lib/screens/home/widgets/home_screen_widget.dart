@@ -126,7 +126,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                     Navigator.pushNamed(context, TodayMoodDishes.id);
                   },
                   child: TextWidget(
-                    text: Strings.viewall,
+                    text: AppStrings.viewall,
                     color: context.appPrimaryColor,
                     fontWeight: FontWeight.w400,
                     textSize: 16.sp,
@@ -172,7 +172,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                     Navigator.pushNamed(context, FoodBrandsScreen.id);
                   },
                   child: TextWidget(
-                    text: Strings.viewall,
+                    text: AppStrings.viewall,
                     color: context.appPrimaryColor,
                     fontWeight: FontWeight.w400,
                     textSize: 16.sp,
@@ -218,7 +218,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                 const Spacer(),
                 InkWell(
                   child: TextWidget(
-                    text: Strings.viewall,
+                    text: AppStrings.viewall,
                     color: context.appPrimaryColor,
                     fontWeight: FontWeight.w400,
                     textSize: 16.sp,

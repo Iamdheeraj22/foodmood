@@ -36,7 +36,7 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
             TextWidget(
               textAlign: TextAlign.center,
               fontWeight: FontWeight.w800,
-              text: Strings.onboardingTitle4,
+              text: AppStrings.onboardingTitle4,
               textSize: 24.sp,
               color: ColorsCollections.appPrimaryColor,
             ),
@@ -46,7 +46,7 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.w),
               child: TextWidget(
-                text: Strings.onboardingDesc4,
+                text: AppStrings.onboardingDesc4,
                 textAlign: TextAlign.center,
                 textSize: 16.sp,
                 color: ColorsCollections.appOnbordingColor,
@@ -58,7 +58,7 @@ class _OnBoardingCompleteScreenState extends State<OnBoardingCompleteScreen> {
                 child: CustomButton(
                     height: 50.h,
                     color: ColorsCollections.appPrimaryColor,
-                    label: Strings.getMoody,
+                    label: AppStrings.getMoody,
                     onPressed: () {
                       Navigator.pushNamedAndRemoveUntil(
                           context, LoginScreen.id, ModalRoute.withName('/'));

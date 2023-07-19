@@ -66,21 +66,22 @@ class FoodBrandModel {
 
 List<FoodBrandModel> foodBrandsList = [
   FoodBrandModel(
-      brandName: Strings.burgerKing, brandLogo: FoodStrings.burgerKing),
+      brandName: AppStrings.burgerKing, brandLogo: FoodStrings.burgerKing),
   FoodBrandModel(
-      brandName: Strings.pizzaHhut, brandLogo: FoodStrings.pizzaHhut),
-  FoodBrandModel(brandName: Strings.subway, brandLogo: FoodStrings.subway),
+      brandName: AppStrings.pizzaHhut, brandLogo: FoodStrings.pizzaHhut),
+  FoodBrandModel(brandName: AppStrings.subway, brandLogo: FoodStrings.subway),
   FoodBrandModel(
-      brandName: Strings.dunkinDonuts, brandLogo: FoodStrings.dunkinDonuts),
+      brandName: AppStrings.dunkinDonuts, brandLogo: FoodStrings.dunkinDonuts),
   FoodBrandModel(
-      brandName: Strings.wendysLogo, brandLogo: FoodStrings.wendysLogo),
-  FoodBrandModel(brandName: Strings.kfc, brandLogo: FoodStrings.kfc),
+      brandName: AppStrings.wendysLogo, brandLogo: FoodStrings.wendysLogo),
+  FoodBrandModel(brandName: AppStrings.kfc, brandLogo: FoodStrings.kfc),
   FoodBrandModel(
-      brandName: Strings.mcdonalds, brandLogo: FoodStrings.mcdonalds),
+      brandName: AppStrings.mcdonalds, brandLogo: FoodStrings.mcdonalds),
   FoodBrandModel(
-      brandName: Strings.starkbucksCoffee,
+      brandName: AppStrings.starkbucksCoffee,
       brandLogo: FoodStrings.starkbucksCoffee),
-  FoodBrandModel(brandName: Strings.dominos, brandLogo: FoodStrings.dominos),
+  FoodBrandModel(brandName: AppStrings.dominos, brandLogo: FoodStrings.dominos),
   FoodBrandModel(
-      brandName: Strings.popeyesChicken, brandLogo: FoodStrings.popeyesChicken),
+      brandName: AppStrings.popeyesChicken,
+      brandLogo: FoodStrings.popeyesChicken),
 ];
