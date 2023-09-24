@@ -46,7 +46,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   Widget build(BuildContext context) {
     resetPasswordViewModel = Provider.of<ResetPasswordViewModel>(context);
     return Scaffold(
-      appBar: const NewCustomAppBar(
+      appBar: NewCustomAppBar(
         title: 'Reset Password',
       ),
       body: Container(
@@ -69,7 +69,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               SizedBox(
                 height: 130.h,
               ),
-              CustomPasswordEditextText(
+              CustomPasswordEditText(
                   hintText: 'New Password',
                   toggleObscured: () {
                     resetPasswordViewModel.setNewPassword();
@@ -84,7 +84,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               SizedBox(
                 height: 25.h,
               ),
-              CustomPasswordEditextText(
+              CustomPasswordEditText(
                   hintText: 'Confirm Password',
                   toggleObscured: () {
                     resetPasswordViewModel.setNewConfirmPassword();

@@ -37,206 +37,210 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: const NewCustomAppBar(
           title: 'SignUp',
+          backgroundColor: Colors.white,
         ),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: SingleChildScrollView(child: Consumer<RegisterViewModel>(
-            builder: (context, registerViewModel, child) {
-              return Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    CustomEditTextWithTitle(
-                      controller: _nameController,
-                      inputAction: TextInputAction.next,
-                      hintText: 'Enter your name',
-                      inputType: TextInputType.text,
-                      title: 'Full Name',
-                      prefixIcon: const Icon(Icons.person),
-                      validator: (value) {
-                        if (value != null) {
-                          if (value.isEmpty) {
-                            return 'Please enter your name';
+        body: SafeArea(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: SingleChildScrollView(child: Consumer<RegisterViewModel>(
+              builder: (context, registerViewModel, child) {
+                return Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      CustomEditTextWithTitle(
+                        controller: _nameController,
+                        inputAction: TextInputAction.next,
+                        hintText: 'Enter your name',
+                        inputType: TextInputType.text,
+                        title: 'Full Name',
+                        prefixIcon: const Icon(Icons.person),
+                        validator: (value) {
+                          if (value != null) {
+                            if (value.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                            if (value.length < 6) {
+                              return 'Please enter valid name';
+                            }
                           }
-                          if (value.length < 6) {
-                            return 'Please enter valid name';
-                          }
-                        }
-                      },
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    CustomEditTextWithTitle(
-                      controller: _emailController,
-                      inputAction: TextInputAction.next,
-                      hintText: AppStrings.kEnterYourEmail,
-                      inputType: TextInputType.text,
-                      title:AppStrings.email,
-                      prefixIcon: const Icon(Icons.email),
-                      validator: (value) {
-                        return Validator.validateEmail(value!);
-                      },
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    CustomEditTextWithTitle(
-                      controller: _usernameController,
-                      inputAction: TextInputAction.next,
-                      hintText: 'Create new username',
-                      inputType: TextInputType.text,
-                      title: 'Username',
-                      prefixIcon: const Icon(Icons.person),
-                      validator: (value) {
-                        if (value != null) {
-                          if (value.isEmpty) {
-                            return 'Please enter your username';
-                          }
-                          if (value.length < 6) {
-                            return 'Please enter valid username';
-                          }
-                        }
-                      },
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    CustomPasswordEditextText(
-                      hintText: AppStrings.kCreateNewPassword,
-                      controller: _createPasswordController,
-                      title: AppStrings.kCreateNewPassword,
-                      toggleObscured: () {
-                        registerViewModel.setCPassword();
-                      },
-                      isShow: registerViewModel.isShowCPassword,
-                      prefixIcon: const Icon(Icons.lock),
-                      inputAction: TextInputAction.next,
-                      inputType: TextInputType.text,
-                      validator: (p0) {
-                        return Validator.passwordValidator(p0!);
-                      },
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    CustomPasswordEditextText(
-                        hintText: AppStrings.confirmPassword,
-                        controller: _confirmPasswordController,
-                        title: AppStrings.confirmPassword,
-                        isShow: registerViewModel.isShowCCPassword,
-                        toggleObscured: () {
-                          registerViewModel.setCCPassword();
                         },
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      CustomEditTextWithTitle(
+                        controller: _emailController,
+                        inputAction: TextInputAction.next,
+                        hintText: AppStrings.kEnterYourEmail,
+                        inputType: TextInputType.text,
+                        title: AppStrings.email,
+                        prefixIcon: const Icon(Icons.email),
+                        validator: (value) {
+                          return Validator.validateEmail(value!);
+                        },
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      CustomEditTextWithTitle(
+                        controller: _usernameController,
+                        inputAction: TextInputAction.next,
+                        hintText: 'Create new username',
+                        inputType: TextInputType.text,
+                        title: 'Username',
+                        prefixIcon: const Icon(Icons.person),
+                        validator: (value) {
+                          if (value != null) {
+                            if (value.isEmpty) {
+                              return 'Please enter your username';
+                            }
+                            if (value.length < 6) {
+                              return 'Please enter valid username';
+                            }
+                          }
+                        },
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      CustomPasswordEditText(
+                        hintText: AppStrings.kCreateNewPassword,
+                        controller: _createPasswordController,
+                        title: AppStrings.kCreateNewPassword,
+                        toggleObscured: () {
+                          registerViewModel.setCPassword();
+                        },
+                        isShow: registerViewModel.isShowCPassword,
+                        prefixIcon: const Icon(Icons.lock),
+                        inputAction: TextInputAction.next,
+                        inputType: TextInputType.text,
                         validator: (p0) {
                           return Validator.passwordValidator(p0!);
                         },
-                        prefixIcon: const Icon(Icons.lock),
-                        inputAction: TextInputAction.done,
-                        inputType: TextInputType.text),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    CustomButton(
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      CustomPasswordEditText(
+                          hintText: AppStrings.confirmPassword,
+                          controller: _confirmPasswordController,
+                          title: AppStrings.confirmPassword,
+                          isShow: registerViewModel.isShowCCPassword,
+                          toggleObscured: () {
+                            registerViewModel.setCCPassword();
+                          },
+                          validator: (p0) {
+                            return Validator.passwordValidator(p0!);
+                          },
+                          prefixIcon: const Icon(Icons.lock),
+                          inputAction: TextInputAction.done,
+                          inputType: TextInputType.text),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      CustomButton(
+                          height: 60.h,
+                          color: ColorsCollections.appPrimaryColor,
+                          label: AppStrings.signUp,
+                          fontWeight: FontStyles.bold,
+                          fontSize: 16.sp,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {}
+                          }),
+                      SizedBox(
                         height: 60.h,
-                        color: ColorsCollections.appPrimaryColor,
-                        label: AppStrings.signUp,
-                        fontWeight: FontStyles.bold,
-                        fontSize: 16.sp,
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {}
-                        }),
-                    SizedBox(
-                      height: 60.h,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          color: context.black,
-                          height: 1.h,
-                          width: 123.w,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20.w),
-                          child: TextWidget(
-                            text: AppStrings.kSignUpLine1,
-                            fontWeight: FontWeight.w600,
-                            textSize: 14.sp,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            color: context.black,
+                            height: 1.h,
+                            width: 123.w,
                           ),
-                        ),
-                        Container(
-                          color: context.black,
-                          height: 1.h,
-                          width: 123.w,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    //Google , Facebook , apple
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        CircleIconButton(
-                          icon: AppIcons.google,
-                          callback: () {
-                            showSnackBar(AppStrings.kUnderDevelopement,
-                                context: context);
-                          },
-                        ),
-                        CircleIconButton(
-                          icon: AppIcons.facebook,
-                          callback: () {
-                            showSnackBar(AppStrings.kUnderDevelopement,
-                                context: context);
-                          },
-                        ),
-                        CircleIconButton(
-                          icon: AppIcons.apple,
-                          callback: () {
-                            showSnackBar(AppStrings.kUnderDevelopement,
-                                context: context);
-                          },
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
-                    Center(
-                      child: RichText(
-                          text: TextSpan(children: [
-                        TextSpan(
-                            text: AppStrings.alreadyAccount,
-                            style: TextStyle(
-                                color: context.black, fontSize: 14.sp)),
-                        TextSpan(
-                          text: AppStrings.login,
-                          style: TextStyle(
-                              color: context.appPrimaryColor,
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w700),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.pop(context);
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20.w),
+                            child: TextWidget(
+                              text: AppStrings.kSignUpLine1,
+                              fontWeight: FontWeight.w600,
+                              textSize: 14.sp,
+                            ),
+                          ),
+                          Container(
+                            color: context.black,
+                            height: 1.h,
+                            width: 123.w,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      //Google , Facebook , apple
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          CircleIconButton(
+                            icon: AppIcons.google,
+                            callback: () {
+                              showSnackBar(AppStrings.kUnderDevelopement,
+                                  context: context);
                             },
-                        )
-                      ])),
-                    ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
-                  ],
-                ),
-              );
-            },
-          )),
+                          ),
+                          CircleIconButton(
+                            icon: AppIcons.facebook,
+                            callback: () {
+                              showSnackBar(AppStrings.kUnderDevelopement,
+                                  context: context);
+                            },
+                          ),
+                          CircleIconButton(
+                            icon: AppIcons.apple,
+                            callback: () {
+                              showSnackBar(AppStrings.kUnderDevelopement,
+                                  context: context);
+                            },
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 50.h,
+                      ),
+                      Center(
+                        child: RichText(
+                            text: TextSpan(children: [
+                          TextSpan(
+                              text: AppStrings.alreadyAccount,
+                              style: TextStyle(
+                                  color: context.black, fontSize: 14.sp)),
+                          TextSpan(
+                            text: AppStrings.login,
+                            style: TextStyle(
+                                color: context.appPrimaryColor,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w700),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pop(context);
+                              },
+                          )
+                        ])),
+                      ),
+                      SizedBox(
+                        height: 50.h,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            )),
+          ),
         ));
   }
 }
