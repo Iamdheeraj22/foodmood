@@ -4,8 +4,8 @@ import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/fonts/font_family.dart';
 import 'package:foodmood/app/res/size/size_config.dart';
 
-class CustomPasswordEditextText extends StatelessWidget {
-  const CustomPasswordEditextText(
+class CustomPasswordEditText extends StatelessWidget {
+  const CustomPasswordEditText(
       {Key? key,
       required this.hintText,
       this.prefixIcon,
@@ -54,6 +54,22 @@ class CustomPasswordEditextText extends StatelessWidget {
                 fontFamily: FontFamily.gilmerHeavy),
             decoration: InputDecoration(
                 prefixIcon: prefixIcon,
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide(color: context.appGreyColor1),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide(color: context.appPrimaryColor),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: const BorderSide(color: Colors.red),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: const BorderSide(color: Colors.red),
+                ),
                 suffixIcon: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
                     child: InkWell(
