@@ -35,8 +35,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
           title: AppStrings.appName,
-          theme: AppTheme.lightTheme(context),
-          darkTheme: AppTheme.darkTheme(context),
           themeMode: appTheme.themeMode,
           onGenerateRoute: CustomRouter.generateRoute,
           initialRoute: LoginScreen.id,

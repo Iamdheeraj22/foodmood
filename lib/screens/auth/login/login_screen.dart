@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:foodmood/app/common_widget/custom_button.dart';
 import 'package:foodmood/app/common_widget/custom_edittext_text_widget.dart';
 import 'package:foodmood/app/common_widget/custom_password_editext_text.dart';
-
 import 'package:foodmood/app/common_widget/text_widget.dart';
 import 'package:foodmood/app/res/colors/colors.dart';
 import 'package:foodmood/app/res/drawables/icons.dart';
@@ -41,6 +40,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0.0,
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+      ),
       body: SafeArea(
           child: Container(
               padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
@@ -85,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(
                             height: 20.h,
                           ),
-                          CustomPasswordEditextText(
+                          CustomPasswordEditText(
                             controller: _passwordController,
                             hintText: 'Enter password',
                             title: 'Password',
